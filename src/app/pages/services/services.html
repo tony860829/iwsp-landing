@@ -1,0 +1,54 @@
+<section class="services-hero section--dark">
+  <div class="container">
+    <span class="section-kicker">Our Services</span>
+    <h1 class="section-title">Solutions that grow with your business</h1>
+    <p class="section-subtitle">
+      Cada servicio está pensado para llevarte de la idea a resultados medibles.
+    </p>
+  </div>
+</section>
+
+<section class="section section--light">
+  <div class="container">
+    @if (loading()) {
+      <div class="state">Cargando servicios…</div>
+    } @else if (error()) {
+      <div class="state state--error">
+        No pudimos cargar los servicios. Intenta de nuevo más tarde.
+      </div>
+    } @else if (services().length === 0) {
+      <div class="state">Aún no hay servicios publicados.</div>
+    } @else {
+      <div class="services__grid">
+        @for (service of services(); track service.id) {
+          <article class="services__card">
+            <div class="services__icon" [class.services__icon--accent]="iconIndex(service) % 2 === 1">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l2.6 6.6L21 9.3l-5 4.4 1.5 6.8L12 16.9 6.5 20.5 8 13.7 3 9.3l6.4-.7z" />
+              </svg>
+            </div>
+
+            <h2>{{ service.name }}</h2>
+            @if (service.type) {
+              <span class="services__type">{{ service.type }}</span>
+            }
+            <p>{{ service.description }}</p>
+
+            <div class="services__footer">
+              @if (service.price) {
+                <span class="services__price">
+                  {{ service.price | currency: 'USD' : 'symbol' : '1.0-0' }}
+                  @if (service.frequency) {
+                    <small>/ {{ service.frequency }}</small>
+                  }
+                </span>
+              }
+              <a routerLink="/pricing" class="btn btn--primary services__cta">Ver planes</a>
+            </div>
+          </article>
+        }
+      </div>
+    }
+  </div>
+</section>

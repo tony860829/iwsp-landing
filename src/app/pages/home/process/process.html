@@ -1,0 +1,25 @@
+<section class="section section--dark">
+  <div class="container">
+    <header class="process__head">
+      <span class="section-kicker">Our methodology</span>
+      <h2 class="section-title">How we implement solutions</h2>
+      <p class="section-subtitle">Un proceso claro en 4 pasos, de la idea al crecimiento.</p>
+    </header>
+
+    <ol class="process__timeline">
+      @for (step of steps; track step.title; let i = $index; let first = $first; let last = $last) {
+        <li class="process__step">
+          <div class="process__node">
+            <span class="process__line" [class.process__line--hidden]="first"></span>
+            <span class="process__number">{{ i + 1 }}</span>
+            <span class="process__line" [class.process__line--hidden]="last"></span>
+          </div>
+          <div class="process__content">
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.text }}</p>
+          </div>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

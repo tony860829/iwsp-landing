@@ -1,0 +1,23 @@
+<section class="section solutions section--dark">
+  <div class="container">
+    <header class="solutions__head">
+      <h2 class="section-title">
+        Everything your business<br />needs to grow online
+      </h2>
+    </header>
+
+    <div class="solutions__grid">
+      @for (item of solutions; track item.title) {
+        <article class="solutions__card">
+          <div class="solutions__icon" [class.solutions__icon--accent]="item.accent">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path [attr.d]="item.icon" />
+            </svg>
+          </div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

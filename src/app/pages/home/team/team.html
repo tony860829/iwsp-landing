@@ -1,0 +1,27 @@
+<section class="section section--light">
+  <div class="container">
+    <header class="team__head">
+      <span class="section-kicker">Our team</span>
+      <h2 class="section-title">The people behind your project</h2>
+      <p class="section-subtitle">
+        A multidisciplinary team combining design, technology and marketing
+        to take your business to the next level.
+      </p>
+    </header>
+
+    <div class="team__grid">
+      @for (crew of crews; track crew.title) {
+        <article class="team__card">
+          <figure class="team__media">
+            <span class="team__initials">{{ crew.initials }}</span>
+            <img [src]="crew.image" [alt]="crew.title" loading="lazy" (error)="($any($event.target)).style.display = 'none'" />
+          </figure>
+          <div class="team__body">
+            <h3>{{ crew.title }}</h3>
+            <p>{{ crew.text }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

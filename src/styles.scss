@@ -1,1 +1,172 @@
-/* You can add global styles to this file, and also import other style files */
+/*
+ * IWS+ Landing — Design System (CSS puro)
+ * Paleta basada en el mockup: navy oscuro + naranja.
+ */
+
+:root {
+  /* Colores */
+  --color-navy: #191a36;
+  --color-navy-deep: #141529;
+  --color-navy-soft: #23244a;
+  --color-orange: #ff5c1a;
+  --color-orange-hover: #e64f10;
+  --color-white: #ffffff;
+  --color-light: #f6f7fb;
+  --color-text-muted: #9a9ab8;
+  --color-text-dark: #2b2c4e;
+  --color-text-body: #5b5c7a;
+
+  /* Tipografía */
+  --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Layout */
+  --container-max: 1140px;
+  --section-padding: 80px;
+  --radius: 12px;
+  --radius-lg: 20px;
+
+  /* Sombras */
+  --shadow-card: 0 10px 30px rgba(25, 26, 54, 0.08);
+  --shadow-pop: 0 16px 40px rgba(25, 26, 54, 0.16);
+}
+
+/* Reset mínimo */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-text-dark);
+  background: var(--color-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Utilidades de layout */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.section {
+  padding-block: var(--section-padding);
+}
+
+.section--dark {
+  background: var(--color-navy);
+  color: var(--color-white);
+}
+
+.section--light {
+  background: var(--color-light);
+}
+
+/* Encabezados de sección */
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-orange);
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-block: 8px 12px;
+  text-align: center;
+}
+
+.section-subtitle {
+  max-width: 560px;
+  margin-inline: auto;
+  text-align: center;
+  color: var(--color-text-body);
+  font-size: 0.95rem;
+}
+
+.section--dark .section-subtitle {
+  color: var(--color-text-muted);
+}
+
+/* Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn--primary {
+  background: var(--color-orange);
+  color: var(--color-white);
+}
+
+.btn--primary:hover {
+  background: var(--color-orange-hover);
+}
+
+.btn--outline {
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  color: var(--color-white);
+}
+
+.btn--outline:hover {
+  border-color: var(--color-white);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 56px;
+  }
+}

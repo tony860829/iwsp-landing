@@ -1,0 +1,81 @@
+<section class="pricing-hero section--dark">
+  <div class="container">
+    <span class="section-kicker">Pricing</span>
+    <h1 class="section-title">Plans that fit your business</h1>
+    <p class="section-subtitle">Elige el plan ideal para impulsar tu presencia online.</p>
+
+    <div class="pricing__toggle" role="group" aria-label="Tipo de pago">
+      <button
+        type="button"
+        [class.pricing__toggle-active]="showMonthly()"
+        (click)="showMonthly.set(true)"
+      >
+        Monthly
+      </button>
+      <button
+        type="button"
+        [class.pricing__toggle-active]="!showMonthly()"
+        (click)="showMonthly.set(false)"
+      >
+        One-time
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="section section--light">
+  <div class="container">
+    @if (loading()) {
+      <div class="state">Cargando planes…</div>
+    } @else if (error()) {
+      <div class="state state--error">No pudimos cargar los planes. Intenta de nuevo más tarde.</div>
+    } @else if (packages().length === 0) {
+      <div class="state">No plans available yet.</div>
+    } @else {
+      <div class="pricing__grid">
+        @for (pack of packages(); track pack.id; let middle = $odd) {
+          <article class="plan" [class.plan--featured]="middle">
+            @if (middle) {
+              <span class="plan__badge">Most popular</span>
+            }
+
+            <h2 class="plan__name">{{ pack.name }}</h2>
+
+            <div class="plan__price">
+              @if (showMonthly()) {
+                <strong>{{ pack.monthlyPrice | currency: 'USD' : 'symbol' : '1.0-0' }}</strong>
+                <small>/ mes</small>
+              } @else {
+                <strong>{{ pack.fullPrice | currency: 'USD' : 'symbol' : '1.0-0' }}</strong>
+                <small>/ pago único</small>
+              }
+            </div>
+
+            @if (showMonthly() && pack.haveDownPayment && pack.downPayment) {
+              <p class="plan__note">
+                Down payment: {{ pack.downPayment | currency: 'USD' : 'symbol' : '1.0-0' }}
+              </p>
+            }
+            @if (!showMonthly() && fullSave(pack)) {
+              <p class="plan__save">
+                Ahorras {{ fullSave(pack) | currency: 'USD' : 'symbol' : '1.0-0' }} vs. pago mensual
+              </p>
+            }
+
+            @if (pack.services?.length) {
+              <ul class="plan__features">
+                @for (srv of pack.services; track srv.id) {
+                  <li>{{ srv.name }}</li>
+                }
+              </ul>
+            }
+
+            <a routerLink="/contact" class="btn pricing__cta" [class.btn--primary]="middle" [class.plan__cta]="!middle">
+              Get started
+            </a>
+          </article>
+        }
+      </div>
+    }
+  </div>
+</section>

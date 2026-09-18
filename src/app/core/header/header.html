@@ -1,0 +1,27 @@
+<header class="header" [class.header--open]="menuOpen()">
+  <div class="container header__inner">
+    <a routerLink="/" class="header__logo" aria-label="IWS+ Home">
+      <span class="header__logo-mark">IWS</span><span class="header__logo-plus">+</span>
+    </a>
+
+    <button
+      class="header__toggle"
+      type="button"
+      aria-label="Abrir menú"
+      [attr.aria-expanded]="menuOpen()"
+      (click)="menuOpen.set(!menuOpen())"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="header__nav" aria-label="Navegación principal">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="menuOpen.set(false)">Home</a>
+      <a routerLink="/services" routerLinkActive="active" (click)="menuOpen.set(false)">Services</a>
+      <a routerLink="/pricing" routerLinkActive="active" (click)="menuOpen.set(false)">Pricing</a>
+      <a routerLink="/contact" routerLinkActive="active" (click)="menuOpen.set(false)">Contact</a>
+      <a routerLink="/contact" class="btn btn--primary header__cta" (click)="menuOpen.set(false)">Get a quote</a>
+    </nav>
+  </div>
+</header>

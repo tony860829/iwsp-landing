@@ -1,0 +1,38 @@
+.stats {
+  background: var(--color-navy);
+  padding-bottom: 56px;
+}
+
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.stats__item {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stats__value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-text-dark);
+}
+
+.stats__label {
+  font-size: 0.75rem;
+  color: var(--color-text-body);
+}
+
+@media (max-width: 768px) {
+  .stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

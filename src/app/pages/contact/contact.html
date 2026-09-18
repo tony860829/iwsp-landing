@@ -1,0 +1,94 @@
+<section class="contact__hero section--dark">
+  <div class="container">
+    <span class="section-kicker">Contact</span>
+    <h1 class="section-title">How to get new customers<br />for your business?</h1>
+    <p class="section-subtitle">We have the solution to that and other questions!</p>
+  </div>
+</section>
+
+<section class="section section--light">
+  <div class="container contact__layout">
+    <aside class="contact__pitch">
+      <h2>With us you will have:</h2>
+      <ul>
+        <li>
+          <strong>More visibility</strong>
+          <span>Position your brand where your customers are looking for you.</span>
+        </li>
+        <li>
+          <strong>Best position on internet</strong>
+          <span>SEO and campaigns that bring qualified traffic.</span>
+        </li>
+        <li>
+          <strong>More customers</strong>
+          <span>A website designed to convert visits into sales.</span>
+        </li>
+      </ul>
+    </aside>
+
+    <form class="contact__form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <h2>Send us a message</h2>
+
+      <div class="contact__row">
+        <div class="field">
+          <label for="firstName">First name</label>
+          <input id="firstName" type="text" formControlName="firstName" placeholder="John"
+            [class.field__input--error]="fieldInvalid('firstName')" />
+          @if (fieldInvalid('firstName')) {
+            <small class="field__error">* First name is required</small>
+          }
+        </div>
+
+        <div class="field">
+          <label for="lastName">Last name</label>
+          <input id="lastName" type="text" formControlName="lastName" placeholder="Snow"
+            [class.field__input--error]="fieldInvalid('lastName')" />
+          @if (fieldInvalid('lastName')) {
+            <small class="field__error">* Last name is required</small>
+          }
+        </div>
+      </div>
+
+      <div class="contact__row">
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" formControlName="email" placeholder="name@example.com"
+            [class.field__input--error]="fieldInvalid('email')" />
+          @if (fieldInvalid('email')) {
+            <small class="field__error">* Valid email is required</small>
+          }
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input id="phone" type="tel" formControlName="phone" placeholder="(xxx) xxx-xxxx"
+            [class.field__input--error]="fieldInvalid('phone')" />
+          @if (fieldInvalid('phone')) {
+            <small class="field__error">* Phone is required</small>
+          }
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="comment">Message</label>
+        <textarea id="comment" formControlName="comment" rows="4"
+          placeholder="Cuéntanos sobre tu negocio..."
+          [class.field__input--error]="fieldInvalid('comment')"></textarea>
+        @if (fieldInvalid('comment')) {
+          <small class="field__error">* Message is required</small>
+        }
+      </div>
+
+      @if (successMessage()) {
+        <p class="contact__alert contact__alert--ok">{{ successMessage() }}</p>
+      }
+      @if (errorMessage()) {
+        <p class="contact__alert contact__alert--error">{{ errorMessage() }}</p>
+      }
+
+      <button type="submit" class="btn btn--primary contact__submit" [disabled]="sending()">
+        {{ sending() ? 'Sending…' : 'Send message' }}
+      </button>
+    </form>
+  </div>
+</section>
