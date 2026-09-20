@@ -2,7 +2,7 @@
   <div class="container">
     <header class="solutions__head">
       <h2 class="section-title">
-        Everything your business<br />needs to grow online
+        {{ 'home.solutions.titleA' | transloco }}<br />{{ 'home.solutions.titleB' | transloco }}
       </h2>
     </header>
 
@@ -14,8 +14,8 @@
               <path [attr.d]="item.icon" />
             </svg>
           </div>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.text }}</p>
+          <h3>{{ item.title | transloco }}</h3>
+          <p>{{ item.text | transloco }}</p>
         </article>
       }
     </div>

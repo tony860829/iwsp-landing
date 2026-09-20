@@ -1,25 +1,32 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
+import { combineLatest } from 'rxjs';
 import { ContactApi } from '../../core/services/contact-api';
 import { Seo } from '../../core/services/seo';
+import { Toast } from '../../core/services/toast';
 
 @Component({
   selector: 'app-contact-page',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, TranslocoPipe],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
 export class Contact {
   private readonly fb = inject(FormBuilder);
   private readonly api = inject(ContactApi);
+  private readonly toast = inject(Toast);
+  private readonly transloco = inject(TranslocoService);
 
   constructor() {
-    inject(Seo).update({
-      title: 'IWS+ | Contact',
-      description:
-        'Ready to get more clients? Contact IWS+ and let us help your business grow online.',
-      path: '/contact',
-    });
+    const seo = inject(Seo);
+    combineLatest([
+      this.transloco.selectTranslate('seo.contact.title'),
+      this.transloco.selectTranslate('seo.contact.description'),
+    ])
+      .pipe(takeUntilDestroyed())
+      .subscribe(([title, description]) => seo.update({ title, description, path: '/contact' }));
   }
 
   protected readonly form = this.fb.nonNullable.group({
@@ -31,13 +38,8 @@ export class Contact {
   });
 
   protected readonly sending = signal(false);
-  protected readonly successMessage = signal('');
-  protected readonly errorMessage = signal('');
 
   protected onSubmit(): void {
-    this.successMessage.set('');
-    this.errorMessage.set('');
-
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
@@ -47,14 +49,13 @@ export class Contact {
     this.api.send(this.form.getRawValue()).subscribe({
       next: (res) => {
         this.sending.set(false);
-        this.successMessage.set(res.message || '¡Gracias! Te contactaremos pronto.');
+        this.toast.success(
+          res?.message || this.transloco.translate('contact.success')
+        );
         this.form.reset();
       },
-      error: (err) => {
+      error: () => {
         this.sending.set(false);
-        this.errorMessage.set(
-          err?.error?.message || 'No pudimos enviar tu mensaje. Intenta de nuevo.'
-        );
       },
     });
   }

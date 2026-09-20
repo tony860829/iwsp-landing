@@ -1,23 +1,23 @@
 <section class="pricing-hero section--dark">
   <div class="container">
-    <span class="section-kicker">Pricing</span>
-    <h1 class="section-title">Plans that fit your business</h1>
-    <p class="section-subtitle">Elige el plan ideal para impulsar tu presencia online.</p>
+    <span class="section-kicker">{{ 'pricing.kicker' | transloco }}</span>
+    <h1 class="section-title">{{ 'pricing.title' | transloco }}</h1>
+    <p class="section-subtitle">{{ 'pricing.subtitle' | transloco }}</p>
 
-    <div class="pricing__toggle" role="group" aria-label="Tipo de pago">
+    <div class="pricing__toggle" role="group" [attr.aria-label]="'pricing.billingAria' | transloco">
       <button
         type="button"
         [class.pricing__toggle-active]="showMonthly()"
         (click)="showMonthly.set(true)"
       >
-        Monthly
+        {{ 'pricing.monthly' | transloco }}
       </button>
       <button
         type="button"
         [class.pricing__toggle-active]="!showMonthly()"
         (click)="showMonthly.set(false)"
       >
-        One-time
+        {{ 'pricing.oneTime' | transloco }}
       </button>
     </div>
   </div>
@@ -26,17 +26,17 @@
 <section class="section section--light">
   <div class="container">
     @if (loading()) {
-      <div class="state">Cargando planes…</div>
+      <div class="state">{{ 'pricing.loading' | transloco }}</div>
     } @else if (error()) {
-      <div class="state state--error">No pudimos cargar los planes. Intenta de nuevo más tarde.</div>
+      <div class="state state--error">{{ 'pricing.error' | transloco }}</div>
     } @else if (packages().length === 0) {
-      <div class="state">No plans available yet.</div>
+      <div class="state">{{ 'pricing.empty' | transloco }}</div>
     } @else {
       <div class="pricing__grid">
         @for (pack of packages(); track pack.id; let middle = $odd) {
           <article class="plan" [class.plan--featured]="middle">
             @if (middle) {
-              <span class="plan__badge">Most popular</span>
+              <span class="plan__badge">{{ 'pricing.popular' | transloco }}</span>
             }
 
             <h2 class="plan__name">{{ pack.name }}</h2>
@@ -44,21 +44,21 @@
             <div class="plan__price">
               @if (showMonthly()) {
                 <strong>{{ pack.monthlyPrice | currency: 'USD' : 'symbol' : '1.0-0' }}</strong>
-                <small>/ mes</small>
+                <small>{{ 'pricing.perMonth' | transloco }}</small>
               } @else {
                 <strong>{{ pack.fullPrice | currency: 'USD' : 'symbol' : '1.0-0' }}</strong>
-                <small>/ pago único</small>
+                <small>{{ 'pricing.oneTimeSuffix' | transloco }}</small>
               }
             </div>
 
             @if (showMonthly() && pack.haveDownPayment && pack.downPayment) {
               <p class="plan__note">
-                Down payment: {{ pack.downPayment | currency: 'USD' : 'symbol' : '1.0-0' }}
+                {{ 'pricing.downPayment' | transloco: { amount: pack.downPayment | currency: 'USD' : 'symbol' : '1.0-0' } }}
               </p>
             }
             @if (!showMonthly() && fullSave(pack)) {
               <p class="plan__save">
-                Ahorras {{ fullSave(pack) | currency: 'USD' : 'symbol' : '1.0-0' }} vs. pago mensual
+                {{ 'pricing.save' | transloco: { amount: fullSave(pack) | currency: 'USD' : 'symbol' : '1.0-0' } }}
               </p>
             }
 
@@ -71,7 +71,7 @@
             }
 
             <a routerLink="/contact" class="btn pricing__cta" [class.btn--primary]="middle" [class.plan__cta]="!middle">
-              Get started
+              {{ 'pricing.getStarted' | transloco }}
             </a>
           </article>
         }

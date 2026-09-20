@@ -1,27 +1,17 @@
 import { Component } from '@angular/core';
+import { TranslocoPipe } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-audience',
+  imports: [TranslocoPipe],
   templateUrl: './audience.html',
   styleUrl: './audience.scss',
 })
 export class Audience {
   protected readonly audiences = [
-    {
-      title: 'Startups',
-      text: 'Validate your idea with a professional online presence from day one.',
-    },
-    {
-      title: 'Small Businesses',
-      text: 'Convert more of your visitors into real clients with a site that sells.',
-    },
-    {
-      title: 'Professionals',
-      text: 'Showcase your portfolio and services with a website that builds trust.',
-    },
-    {
-      title: 'Online Stores',
-      text: 'Sell your products 24/7 with an optimized e-commerce experience.',
-    },
+    { title: 'home.audience.startupsTitle', text: 'home.audience.startupsText' },
+    { title: 'home.audience.smallTitle', text: 'home.audience.smallText' },
+    { title: 'home.audience.prosTitle', text: 'home.audience.prosText' },
+    { title: 'home.audience.storesTitle', text: 'home.audience.storesText' },
   ];
 }

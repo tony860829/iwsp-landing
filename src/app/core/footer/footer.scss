@@ -11,22 +11,14 @@
 }
 
 .footer__logo {
-  font-weight: 800;
-  font-size: 1.4rem;
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
 }
 
-.footer__logo-mark {
-  background: var(--color-orange);
-  color: var(--color-white);
-  padding: 4px 10px;
-  border-radius: 10px;
-}
-
-.footer__logo-plus {
-  color: var(--color-orange);
-  margin-left: 2px;
+.footer__logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
 }
 
 .footer__tagline {

@@ -1,23 +1,19 @@
 <section class="services-hero section--dark">
   <div class="container">
-    <span class="section-kicker">Our Services</span>
-    <h1 class="section-title">Solutions that grow with your business</h1>
-    <p class="section-subtitle">
-      Cada servicio está pensado para llevarte de la idea a resultados medibles.
-    </p>
+    <span class="section-kicker">{{ 'services.kicker' | transloco }}</span>
+    <h1 class="section-title">{{ 'services.title' | transloco }}</h1>
+    <p class="section-subtitle">{{ 'services.subtitle' | transloco }}</p>
   </div>
 </section>
 
 <section class="section section--light">
   <div class="container">
     @if (loading()) {
-      <div class="state">Cargando servicios…</div>
+      <div class="state">{{ 'services.loading' | transloco }}</div>
     } @else if (error()) {
-      <div class="state state--error">
-        No pudimos cargar los servicios. Intenta de nuevo más tarde.
-      </div>
+      <div class="state state--error">{{ 'services.error' | transloco }}</div>
     } @else if (services().length === 0) {
-      <div class="state">Aún no hay servicios publicados.</div>
+      <div class="state">{{ 'services.empty' | transloco }}</div>
     } @else {
       <div class="services__grid">
         @for (service of services(); track service.id) {
@@ -44,7 +40,7 @@
                   }
                 </span>
               }
-              <a routerLink="/pricing" class="btn btn--primary services__cta">Ver planes</a>
+              <a routerLink="/pricing" class="btn btn--primary services__cta">{{ 'services.viewPlans' | transloco }}</a>
             </div>
           </article>
         }

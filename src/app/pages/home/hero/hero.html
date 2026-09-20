@@ -2,21 +2,18 @@
   <div class="container hero__inner">
     <div class="hero__content">
       <h1 class="hero__title">
-        Start Getting <span>Clients</span><br />
-        for your Business
+        {{ 'home.hero.titleA' | transloco }} <span>{{ 'home.hero.titleHighlight' | transloco }}</span><br />
+        {{ 'home.hero.titleB' | transloco }}
       </h1>
-      <p class="hero__subtitle">
-        We help people like you to obtain clients for their business through different marketing
-        channels.
-      </p>
+      <p class="hero__subtitle">{{ 'home.hero.subtitle' | transloco }}</p>
       <div class="hero__actions">
-        <a routerLink="/contact" class="btn btn--primary">Start Now</a>
-        <a routerLink="/services" class="btn btn--outline">Watch video</a>
+        <a routerLink="/contact" class="btn btn--primary">{{ 'home.hero.startNow' | transloco }}</a>
+        <a routerLink="/services" class="btn btn--outline">{{ 'home.hero.watchVideo' | transloco }}</a>
       </div>
     </div>
 
     <div class="hero__media">
-      <img class="hero__image" src="images/hero.webp" alt="IWS+ business growth dashboard" />
+      <img class="hero__image" src="images/hero.webp" [alt]="'home.hero.imageAlt' | transloco" />
     </div>
   </div>
 </section>

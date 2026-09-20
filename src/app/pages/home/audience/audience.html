@@ -1,15 +1,15 @@
 <section class="section">
   <div class="container">
     <header class="audience__head">
-      <span class="section-kicker">Who we help</span>
-      <h2 class="section-title">For whom is it essential to have a website</h2>
+      <span class="section-kicker">{{ 'home.audience.kicker' | transloco }}</span>
+      <h2 class="section-title">{{ 'home.audience.title' | transloco }}</h2>
     </header>
 
     <div class="audience__grid">
       @for (item of audiences; track item.title) {
         <article class="audience__card">
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.text }}</p>
+          <h3>{{ item.title | transloco }}</h3>
+          <p>{{ item.text | transloco }}</p>
         </article>
       }
     </div>

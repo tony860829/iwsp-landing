@@ -1,27 +1,17 @@
 import { Component } from '@angular/core';
+import { TranslocoPipe } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-process',
+  imports: [TranslocoPipe],
   templateUrl: './process.html',
   styleUrl: './process.scss',
 })
 export class Process {
   protected readonly steps = [
-    {
-      title: 'Discovery',
-      text: 'We analyze your business, goals and competitors to define the strategy.',
-    },
-    {
-      title: 'Design',
-      text: 'We create the visual proposal aligned with your brand and your clients.',
-    },
-    {
-      title: 'Development',
-      text: 'We build your website with modern, fast and scalable technology.',
-    },
-    {
-      title: 'Launch & Grow',
-      text: 'We publish, measure results and optimize continuously.',
-    },
+    { title: 'home.process.step1Title', text: 'home.process.step1Text' },
+    { title: 'home.process.step2Title', text: 'home.process.step2Text' },
+    { title: 'home.process.step3Title', text: 'home.process.step3Text' },
+    { title: 'home.process.step4Title', text: 'home.process.step4Text' },
   ];
 }

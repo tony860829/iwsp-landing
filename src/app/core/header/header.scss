@@ -14,24 +14,14 @@
 }
 
 .header__logo {
-  font-weight: 800;
-  font-size: 1.4rem;
-  letter-spacing: -0.5px;
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
 }
 
-.header__logo-mark {
-  color: var(--color-white);
-  background: var(--color-orange);
-  padding: 4px 10px;
-  border-radius: 10px;
-}
-
-.header__logo-plus {
-  color: var(--color-orange);
-  font-size: 1.2rem;
-  margin-left: 2px;
+.header__logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
 }
 
 .header__nav {
@@ -56,6 +46,47 @@
   color: var(--color-white) !important;
   padding: 10px 22px;
   font-size: 0.85rem;
+}
+
+.header__langs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header__lang {
+  background: none;
+  border: 0;
+  padding: 4px 6px;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--color-white);
+  }
+
+  &--active {
+    color: var(--color-orange);
+  }
+
+  &:first-child {
+    position: relative;
+    padding-right: 12px;
+
+    &::after {
+      content: '|';
+      position: absolute;
+      right: -2px;
+      color: rgba(255, 255, 255, 0.25);
+      pointer-events: none;
+    }
+  }
 }
 
 .header__toggle {

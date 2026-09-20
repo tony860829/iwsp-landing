@@ -1,0 +1,195 @@
+{
+  "header": {
+    "home": "Home",
+    "services": "Services",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "cta": "Get a quote",
+    "logoAria": "IWS+ Home",
+    "menuAria": "Open menu",
+    "navAria": "Primary navigation",
+    "langAria": "Language"
+  },
+  "footer": {
+    "tagline": "We help people like you to obtain clients for their business through different marketing channels.",
+    "servicesTitle": "Services",
+    "webDevelopment": "Web Development",
+    "webDesign": "Web Design",
+    "seo": "SEO",
+    "digitalMarketing": "Digital Marketing",
+    "companyTitle": "Company",
+    "legalTitle": "Legal",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookies",
+    "copyright": "© {{year}} IWS+. All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "titleA": "Start Getting",
+      "titleHighlight": "Clients",
+      "titleB": "for your Business",
+      "subtitle": "We help people like you to obtain clients for their business through different marketing channels.",
+      "startNow": "Start Now",
+      "watchVideo": "Watch video",
+      "imageAlt": "IWS+ business growth dashboard"
+    },
+    "stats": {
+      "clientSatisfaction": "Client Satisfaction",
+      "activeProjects": "Active Projects",
+      "teamExperts": "Team Experts",
+      "support": "Support Availability"
+    },
+    "tailored": {
+      "kicker": "Dedicated to your success",
+      "title": "Tailored Solutions, thought for each client",
+      "whatTitle": "What we do",
+      "whatText": "We focus on helping you to obtain clients for your business through a website built with the latest technologies, plus marketing services to boost your product.",
+      "howTitle": "How we work",
+      "howText": "We plan, design and develop in short iterations, keeping you involved in every step with clear deliverables until launch.",
+      "prestigeTitle": "Prestige Services",
+      "prestige1": "Web Dev",
+      "prestige2": "Our team services",
+      "prestige3": "Optimization",
+      "prestige4": "Marketing",
+      "prestige5": "E-mail service"
+    },
+    "solutions": {
+      "titleA": "Everything your business",
+      "titleB": "needs to grow online",
+      "webdevTitle": "Web Development",
+      "webdevText": "Develop a full web solution for your business: fast, secure and ready to scale.",
+      "webdesignTitle": "Web Design",
+      "webdesignText": "Customized designs focused on user experience and your brand identity.",
+      "seoTitle": "SEO / Search Engine",
+      "seoText": "Optimize your site to rank better in search engines and attract organic traffic.",
+      "marketingTitle": "Digital Marketing",
+      "marketingText": "Campaigns on social networks and ads to reach your ideal customers.",
+      "emailTitle": "Email Marketing",
+      "emailText": "Design and automation of email campaigns to retain your customers.",
+      "socialTitle": "Social Media Admin",
+      "socialText": "Management of your social media so you can focus on your business."
+    },
+    "audience": {
+      "kicker": "Who we help",
+      "title": "For whom is it essential to have a website",
+      "startupsTitle": "Startups",
+      "startupsText": "Validate your idea with a professional online presence from day one.",
+      "smallTitle": "Small Businesses",
+      "smallText": "Convert more of your visitors into real clients with a site that sells.",
+      "prosTitle": "Professionals",
+      "prosText": "Showcase your portfolio and services with a website that builds trust.",
+      "storesTitle": "Online Stores",
+      "storesText": "Sell your products 24/7 with an optimized e-commerce experience."
+    },
+    "process": {
+      "kicker": "Our methodology",
+      "title": "How we implement solutions",
+      "subtitle": "A clear 4-step process, from idea to growth.",
+      "step1Title": "Discovery",
+      "step1Text": "We analyze your business, goals and competitors to define the strategy.",
+      "step2Title": "Design",
+      "step2Text": "We create the visual proposal aligned with your brand and your clients.",
+      "step3Title": "Development",
+      "step3Text": "We build your website with modern, fast and scalable technology.",
+      "step4Title": "Launch & Grow",
+      "step4Text": "We publish, measure results and optimize continuously."
+    },
+    "team": {
+      "kicker": "Our team",
+      "title": "The people behind your project",
+      "subtitle": "A multidisciplinary team combining design, technology and marketing to take your business to the next level.",
+      "designTitle": "Designers",
+      "designText": "Visual design and user experience that turn visitors into clients.",
+      "devTitle": "Software Developers",
+      "devText": "Modern, fast and scalable code that brings every project to life.",
+      "mktTitle": "Marketing Specialists",
+      "mktText": "SEO, ads and content strategies that make your business grow."
+    },
+    "cta": {
+      "title": "Ready to take your business to the next level?",
+      "text": "Let's talk about your project and how we can help you grow.",
+      "button": "Start Now"
+    }
+  },
+  "services": {
+    "kicker": "Our Services",
+    "title": "Solutions that grow with your business",
+    "subtitle": "Every service is designed to take you from idea to measurable results.",
+    "loading": "Loading services…",
+    "error": "We couldn't load the services. Please try again later.",
+    "empty": "No services published yet.",
+    "viewPlans": "View plans"
+  },
+  "pricing": {
+    "kicker": "Pricing",
+    "title": "Plans that fit your business",
+    "subtitle": "Choose the perfect plan to boost your online presence.",
+    "billingAria": "Billing period",
+    "monthly": "Monthly",
+    "oneTime": "One-time",
+    "loading": "Loading plans…",
+    "error": "We couldn't load the plans. Please try again later.",
+    "empty": "No plans available yet.",
+    "popular": "Most popular",
+    "perMonth": "/ mo",
+    "oneTimeSuffix": "one-time",
+    "downPayment": "Down payment: {{amount}}",
+    "save": "Save {{amount}} vs. monthly",
+    "getStarted": "Get started"
+  },
+  "contact": {
+    "kicker": "Contact",
+    "titleA": "How to get new customers",
+    "titleB": "for your business?",
+    "subtitle": "We have the solution to that and other questions!",
+    "pitchTitle": "With us you will have:",
+    "pitch1Title": "More visibility",
+    "pitch1Text": "Position your brand where your customers are looking for you.",
+    "pitch2Title": "Best position on internet",
+    "pitch2Text": "SEO and campaigns that bring qualified traffic.",
+    "pitch3Title": "More customers",
+    "pitch3Text": "A website designed to convert visits into sales.",
+    "formTitle": "Send us a message",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "firstNamePh": "John",
+    "lastNamePh": "Snow",
+    "emailPh": "name@example.com",
+    "phonePh": "(xxx) xxx-xxxx",
+    "messagePh": "Tell us about your business...",
+    "errFirstName": "* First name is required",
+    "errLastName": "* Last name is required",
+    "errEmail": "* Valid email is required",
+    "errPhone": "* Phone is required",
+    "errMessage": "* Message is required",
+    "sending": "Sending…",
+    "submit": "Send message",
+    "success": "Thanks! We will contact you soon."
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again later.",
+    "dismiss": "Dismiss"
+  },
+  "seo": {
+    "home": {
+      "title": "IWS+ | Start Getting Clients for your Business",
+      "description": "We help businesses grow online with tailored web development, SEO and digital marketing solutions."
+    },
+    "services": {
+      "title": "IWS+ | Services",
+      "description": "Web development, web design, SEO, digital marketing and more. Tailored solutions to grow your business online."
+    },
+    "pricing": {
+      "title": "IWS+ | Pricing",
+      "description": "Flexible monthly and one-time plans for web development, marketing and design. Find the plan that fits your business."
+    },
+    "contact": {
+      "title": "IWS+ | Contact",
+      "description": "Ready to get more clients? Contact IWS+ and let us help your business grow online."
+    }
+  }
+}

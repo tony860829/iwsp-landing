@@ -1,9 +1,9 @@
 <section class="section section--dark">
   <div class="container">
     <header class="process__head">
-      <span class="section-kicker">Our methodology</span>
-      <h2 class="section-title">How we implement solutions</h2>
-      <p class="section-subtitle">Un proceso claro en 4 pasos, de la idea al crecimiento.</p>
+      <span class="section-kicker">{{ 'home.process.kicker' | transloco }}</span>
+      <h2 class="section-title">{{ 'home.process.title' | transloco }}</h2>
+      <p class="section-subtitle">{{ 'home.process.subtitle' | transloco }}</p>
     </header>
 
     <ol class="process__timeline">
@@ -15,8 +15,8 @@
             <span class="process__line" [class.process__line--hidden]="last"></span>
           </div>
           <div class="process__content">
-            <h3>{{ step.title }}</h3>
-            <p>{{ step.text }}</p>
+            <h3>{{ step.title | transloco }}</h3>
+            <p>{{ step.text | transloco }}</p>
           </div>
         </li>
       }

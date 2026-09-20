@@ -1,93 +1,86 @@
 <section class="contact__hero section--dark">
   <div class="container">
-    <span class="section-kicker">Contact</span>
-    <h1 class="section-title">How to get new customers<br />for your business?</h1>
-    <p class="section-subtitle">We have the solution to that and other questions!</p>
+    <span class="section-kicker">{{ 'contact.kicker' | transloco }}</span>
+    <h1 class="section-title">{{ 'contact.titleA' | transloco }}<br />{{ 'contact.titleB' | transloco }}</h1>
+    <p class="section-subtitle">{{ 'contact.subtitle' | transloco }}</p>
   </div>
 </section>
 
 <section class="section section--light">
   <div class="container contact__layout">
     <aside class="contact__pitch">
-      <h2>With us you will have:</h2>
+      <h2>{{ 'contact.pitchTitle' | transloco }}</h2>
       <ul>
         <li>
-          <strong>More visibility</strong>
-          <span>Position your brand where your customers are looking for you.</span>
+          <strong>{{ 'contact.pitch1Title' | transloco }}</strong>
+          <span>{{ 'contact.pitch1Text' | transloco }}</span>
         </li>
         <li>
-          <strong>Best position on internet</strong>
-          <span>SEO and campaigns that bring qualified traffic.</span>
+          <strong>{{ 'contact.pitch2Title' | transloco }}</strong>
+          <span>{{ 'contact.pitch2Text' | transloco }}</span>
         </li>
         <li>
-          <strong>More customers</strong>
-          <span>A website designed to convert visits into sales.</span>
+          <strong>{{ 'contact.pitch3Title' | transloco }}</strong>
+          <span>{{ 'contact.pitch3Text' | transloco }}</span>
         </li>
       </ul>
     </aside>
 
     <form class="contact__form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
-      <h2>Send us a message</h2>
+      <h2>{{ 'contact.formTitle' | transloco }}</h2>
 
       <div class="contact__row">
         <div class="field">
-          <label for="firstName">First name</label>
-          <input id="firstName" type="text" formControlName="firstName" placeholder="John"
+          <label for="firstName">{{ 'contact.firstName' | transloco }}</label>
+          <input id="firstName" type="text" formControlName="firstName" [placeholder]="'contact.firstNamePh' | transloco"
             [class.field__input--error]="fieldInvalid('firstName')" />
           @if (fieldInvalid('firstName')) {
-            <small class="field__error">* First name is required</small>
+            <small class="field__error">{{ 'contact.errFirstName' | transloco }}</small>
           }
         </div>
 
         <div class="field">
-          <label for="lastName">Last name</label>
-          <input id="lastName" type="text" formControlName="lastName" placeholder="Snow"
+          <label for="lastName">{{ 'contact.lastName' | transloco }}</label>
+          <input id="lastName" type="text" formControlName="lastName" [placeholder]="'contact.lastNamePh' | transloco"
             [class.field__input--error]="fieldInvalid('lastName')" />
           @if (fieldInvalid('lastName')) {
-            <small class="field__error">* Last name is required</small>
+            <small class="field__error">{{ 'contact.errLastName' | transloco }}</small>
           }
         </div>
       </div>
 
       <div class="contact__row">
         <div class="field">
-          <label for="email">Email</label>
-          <input id="email" type="email" formControlName="email" placeholder="name@example.com"
+          <label for="email">{{ 'contact.email' | transloco }}</label>
+          <input id="email" type="email" formControlName="email" [placeholder]="'contact.emailPh' | transloco"
             [class.field__input--error]="fieldInvalid('email')" />
           @if (fieldInvalid('email')) {
-            <small class="field__error">* Valid email is required</small>
+            <small class="field__error">{{ 'contact.errEmail' | transloco }}</small>
           }
         </div>
 
         <div class="field">
-          <label for="phone">Phone</label>
-          <input id="phone" type="tel" formControlName="phone" placeholder="(xxx) xxx-xxxx"
+          <label for="phone">{{ 'contact.phone' | transloco }}</label>
+          <input id="phone" type="tel" formControlName="phone" [placeholder]="'contact.phonePh' | transloco"
             [class.field__input--error]="fieldInvalid('phone')" />
           @if (fieldInvalid('phone')) {
-            <small class="field__error">* Phone is required</small>
+            <small class="field__error">{{ 'contact.errPhone' | transloco }}</small>
           }
         </div>
       </div>
 
       <div class="field">
-        <label for="comment">Message</label>
+        <label for="comment">{{ 'contact.message' | transloco }}</label>
         <textarea id="comment" formControlName="comment" rows="4"
-          placeholder="Cuéntanos sobre tu negocio..."
+          [placeholder]="'contact.messagePh' | transloco"
           [class.field__input--error]="fieldInvalid('comment')"></textarea>
         @if (fieldInvalid('comment')) {
-          <small class="field__error">* Message is required</small>
+          <small class="field__error">{{ 'contact.errMessage' | transloco }}</small>
         }
       </div>
 
-      @if (successMessage()) {
-        <p class="contact__alert contact__alert--ok">{{ successMessage() }}</p>
-      }
-      @if (errorMessage()) {
-        <p class="contact__alert contact__alert--error">{{ errorMessage() }}</p>
-      }
-
       <button type="submit" class="btn btn--primary contact__submit" [disabled]="sending()">
-        {{ sending() ? 'Sending…' : 'Send message' }}
+        {{ (sending() ? 'contact.sending' : 'contact.submit') | transloco }}
       </button>
     </form>
   </div>

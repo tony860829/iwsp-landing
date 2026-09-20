@@ -1,4 +1,7 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { TranslocoService } from '@jsverse/transloco';
+import { combineLatest } from 'rxjs';
 import { Hero } from './hero/hero';
 import { Stats } from './stats/stats';
 import { Tailored } from './tailored/tailored';
@@ -23,15 +26,15 @@ import { Seo } from '../../core/services/seo';
     <app-cta />
   `,
 })
-export class Home implements OnInit {
-  private readonly seo = inject(Seo);
-
-  ngOnInit(): void {
-    this.seo.update({
-      title: 'IWS+ | Start Getting Clients for your Business',
-      description:
-        'We help businesses grow online with tailored web development, SEO and digital marketing solutions.',
-      path: '/',
-    });
+export class Home {
+  constructor() {
+    const seo = inject(Seo);
+    const transloco = inject(TranslocoService);
+    combineLatest([
+      transloco.selectTranslate('seo.home.title'),
+      transloco.selectTranslate('seo.home.description'),
+    ])
+      .pipe(takeUntilDestroyed())
+      .subscribe(([title, description]) => seo.update({ title, description, path: '/' }));
   }
 }

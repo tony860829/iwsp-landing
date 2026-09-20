@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
+import { TranslocoPipe } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-tailored',
+  imports: [TranslocoPipe],
   templateUrl: './tailored.html',
   styleUrl: './tailored.scss',
 })
 export class Tailored {
   protected readonly prestigeServices = [
-    'Web Dev',
-    'Our team services',
-    'Optimization',
-    'Marketing',
-    'E-mail service',
+    'home.tailored.prestige1',
+    'home.tailored.prestige2',
+    'home.tailored.prestige3',
+    'home.tailored.prestige4',
+    'home.tailored.prestige5',
   ];
 }

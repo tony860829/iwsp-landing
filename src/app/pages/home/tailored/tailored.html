@@ -1,32 +1,26 @@
 <section class="section section--light">
   <div class="container">
     <header class="tailored__head">
-      <span class="section-kicker">Dedicated to your success</span>
-      <h2 class="section-title">Tailored Solutions, thought for each client</h2>
+      <span class="section-kicker">{{ 'home.tailored.kicker' | transloco }}</span>
+      <h2 class="section-title">{{ 'home.tailored.title' | transloco }}</h2>
     </header>
 
     <div class="tailored__grid">
       <article class="card">
-        <h3>What we do</h3>
-        <p>
-          We focus on helping you to obtain clients for your business through a website built with
-          the latest technologies, plus marketing services to boost your product.
-        </p>
+        <h3>{{ 'home.tailored.whatTitle' | transloco }}</h3>
+        <p>{{ 'home.tailored.whatText' | transloco }}</p>
       </article>
 
       <article class="card">
-        <h3>How we work</h3>
-        <p>
-          We plan, design and develop in short iterations, keeping you involved in every step with
-          clear deliverables until launch.
-        </p>
+        <h3>{{ 'home.tailored.howTitle' | transloco }}</h3>
+        <p>{{ 'home.tailored.howText' | transloco }}</p>
       </article>
 
       <article class="card card--accent">
-        <h3>Prestige Services</h3>
+        <h3>{{ 'home.tailored.prestigeTitle' | transloco }}</h3>
         <ul>
           @for (item of prestigeServices; track item) {
-            <li>{{ item }}</li>
+            <li>{{ item | transloco }}</li>
           }
         </ul>
       </article>

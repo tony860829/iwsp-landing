@@ -1,13 +1,13 @@
 <header class="header" [class.header--open]="menuOpen()">
   <div class="container header__inner">
-    <a routerLink="/" class="header__logo" aria-label="IWS+ Home">
-      <span class="header__logo-mark">IWS</span><span class="header__logo-plus">+</span>
+    <a routerLink="/" class="header__logo" [attr.aria-label]="'header.logoAria' | transloco">
+      <img src="/images/logo-orange.png" alt="IWS+" class="header__logo-img" width="160" height="50" />
     </a>
 
     <button
       class="header__toggle"
       type="button"
-      aria-label="Abrir menú"
+      [attr.aria-label]="'header.menuAria' | transloco"
       [attr.aria-expanded]="menuOpen()"
       (click)="menuOpen.set(!menuOpen())"
     >
@@ -16,12 +16,27 @@
       <span></span>
     </button>
 
-    <nav class="header__nav" aria-label="Navegación principal">
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="menuOpen.set(false)">Home</a>
-      <a routerLink="/services" routerLinkActive="active" (click)="menuOpen.set(false)">Services</a>
-      <a routerLink="/pricing" routerLinkActive="active" (click)="menuOpen.set(false)">Pricing</a>
-      <a routerLink="/contact" routerLinkActive="active" (click)="menuOpen.set(false)">Contact</a>
-      <a routerLink="/contact" class="btn btn--primary header__cta" (click)="menuOpen.set(false)">Get a quote</a>
+    <nav class="header__nav" [attr.aria-label]="'header.navAria' | transloco">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="menuOpen.set(false)">{{ 'header.home' | transloco }}</a>
+      <a routerLink="/services" routerLinkActive="active" (click)="menuOpen.set(false)">{{ 'header.services' | transloco }}</a>
+      <a routerLink="/pricing" routerLinkActive="active" (click)="menuOpen.set(false)">{{ 'header.pricing' | transloco }}</a>
+      <a routerLink="/contact" routerLinkActive="active" (click)="menuOpen.set(false)">{{ 'header.contact' | transloco }}</a>
+
+      <div class="header__langs" role="group" [attr.aria-label]="'header.langAria' | transloco">
+        @for (l of langs; track l) {
+          <button
+            type="button"
+            class="header__lang"
+            [class.header__lang--active]="lang.activeLang() === l"
+            [attr.aria-pressed]="lang.activeLang() === l"
+            (click)="lang.setLang(l)"
+          >
+            {{ l | uppercase }}
+          </button>
+        }
+      </div>
+
+      <a routerLink="/contact" class="btn btn--primary header__cta" (click)="menuOpen.set(false)">{{ 'header.cta' | transloco }}</a>
     </nav>
   </div>
 </header>

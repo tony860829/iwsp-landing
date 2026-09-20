@@ -1,0 +1,195 @@
+{
+  "header": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "pricing": "Precios",
+    "contact": "Contacto",
+    "cta": "Cotiza ahora",
+    "logoAria": "IWS+ Inicio",
+    "menuAria": "Abrir menú",
+    "navAria": "Navegación principal",
+    "langAria": "Idioma"
+  },
+  "footer": {
+    "tagline": "Ayudamos a personas como tú a conseguir clientes para su negocio a través de diferentes canales de marketing.",
+    "servicesTitle": "Servicios",
+    "webDevelopment": "Desarrollo Web",
+    "webDesign": "Diseño Web",
+    "seo": "SEO",
+    "digitalMarketing": "Marketing Digital",
+    "companyTitle": "Empresa",
+    "legalTitle": "Legal",
+    "terms": "Términos de Servicio",
+    "privacy": "Política de Privacidad",
+    "cookies": "Cookies",
+    "copyright": "© {{year}} IWS+. Todos los derechos reservados."
+  },
+  "home": {
+    "hero": {
+      "titleA": "Empieza a Conseguir",
+      "titleHighlight": "Clientes",
+      "titleB": "para tu Negocio",
+      "subtitle": "Ayudamos a personas como tú a conseguir clientes para su negocio a través de diferentes canales de marketing.",
+      "startNow": "Empieza ahora",
+      "watchVideo": "Ver video",
+      "imageAlt": "Panel de crecimiento de negocio de IWS+"
+    },
+    "stats": {
+      "clientSatisfaction": "Satisfacción de clientes",
+      "activeProjects": "Proyectos activos",
+      "teamExperts": "Expertos en el equipo",
+      "support": "Disponibilidad de soporte"
+    },
+    "tailored": {
+      "kicker": "Dedicados a tu éxito",
+      "title": "Soluciones a la medida, pensadas para cada cliente",
+      "whatTitle": "Qué hacemos",
+      "whatText": "Nos enfocamos en ayudarte a conseguir clientes para tu negocio a través de un sitio web construido con las últimas tecnologías, junto con servicios de marketing para impulsar tu producto.",
+      "howTitle": "Cómo trabajamos",
+      "howText": "Planificamos, diseñamos y desarrollamos en iteraciones cortas, manteniéndote involucrado en cada paso con entregables claros hasta el lanzamiento.",
+      "prestigeTitle": "Servicios de prestigio",
+      "prestige1": "Desarrollo Web",
+      "prestige2": "Servicios de nuestro equipo",
+      "prestige3": "Optimización",
+      "prestige4": "Marketing",
+      "prestige5": "Servicio de e-mail"
+    },
+    "solutions": {
+      "titleA": "Todo lo que tu negocio",
+      "titleB": "necesita para crecer en línea",
+      "webdevTitle": "Desarrollo Web",
+      "webdevText": "Desarrolla una solución web completa para tu negocio: rápida, segura y lista para escalar.",
+      "webdesignTitle": "Diseño Web",
+      "webdesignText": "Diseños personalizados enfocados en la experiencia de usuario y la identidad de tu marca.",
+      "seoTitle": "SEO / Motores de búsqueda",
+      "seoText": "Optimiza tu sitio para posicionar mejor en buscadores y atraer tráfico orgánico.",
+      "marketingTitle": "Marketing Digital",
+      "marketingText": "Campañas en redes sociales y anuncios para llegar a tus clientes ideales.",
+      "emailTitle": "Email Marketing",
+      "emailText": "Diseño y automatización de campañas de email para fidelizar a tus clientes.",
+      "socialTitle": "Gestión de Redes Sociales",
+      "socialText": "Administramos tus redes sociales para que tú te enfoques en tu negocio."
+    },
+    "audience": {
+      "kicker": "A quién ayudamos",
+      "title": "Para quién es esencial tener un sitio web",
+      "startupsTitle": "Startups",
+      "startupsText": "Valida tu idea con una presencia en línea profesional desde el primer día.",
+      "smallTitle": "Pequeños negocios",
+      "smallText": "Convierte más visitantes en clientes reales con un sitio que vende.",
+      "prosTitle": "Profesionales",
+      "prosText": "Muestra tu portafolio y servicios con un sitio web que genera confianza.",
+      "storesTitle": "Tiendas en línea",
+      "storesText": "Vende tus productos 24/7 con una experiencia de e-commerce optimizada."
+    },
+    "process": {
+      "kicker": "Nuestra metodología",
+      "title": "Cómo implementamos soluciones",
+      "subtitle": "Un proceso claro en 4 pasos, de la idea al crecimiento.",
+      "step1Title": "Descubrimiento",
+      "step1Text": "Analizamos tu negocio, objetivos y competidores para definir la estrategia.",
+      "step2Title": "Diseño",
+      "step2Text": "Creamos la propuesta visual alineada con tu marca y tus clientes.",
+      "step3Title": "Desarrollo",
+      "step3Text": "Construimos tu sitio web con tecnología moderna, rápida y escalable.",
+      "step4Title": "Lanzamiento y crecimiento",
+      "step4Text": "Publicamos, medimos resultados y optimizamos continuamente."
+    },
+    "team": {
+      "kicker": "Nuestro equipo",
+      "title": "Las personas detrás de tu proyecto",
+      "subtitle": "Un equipo multidisciplinario que combina diseño, tecnología y marketing para llevar tu negocio al siguiente nivel.",
+      "designTitle": "Diseñadores",
+      "designText": "Diseño visual y experiencia de usuario que convierten visitantes en clientes.",
+      "devTitle": "Desarrolladores de software",
+      "devText": "Código moderno, rápido y escalable que da vida a cada proyecto.",
+      "mktTitle": "Especialistas en marketing",
+      "mktText": "Estrategias de SEO, anuncios y contenido que hacen crecer tu negocio."
+    },
+    "cta": {
+      "title": "¿Listo para llevar tu negocio al siguiente nivel?",
+      "text": "Hablemos de tu proyecto y de cómo podemos ayudarte a crecer.",
+      "button": "Empieza ahora"
+    }
+  },
+  "services": {
+    "kicker": "Nuestros Servicios",
+    "title": "Soluciones que crecen con tu negocio",
+    "subtitle": "Cada servicio está pensado para llevarte de la idea a resultados medibles.",
+    "loading": "Cargando servicios…",
+    "error": "No pudimos cargar los servicios. Intenta de nuevo más tarde.",
+    "empty": "Aún no hay servicios publicados.",
+    "viewPlans": "Ver planes"
+  },
+  "pricing": {
+    "kicker": "Precios",
+    "title": "Planes que se ajustan a tu negocio",
+    "subtitle": "Elige el plan ideal para impulsar tu presencia en línea.",
+    "billingAria": "Tipo de pago",
+    "monthly": "Mensual",
+    "oneTime": "Pago único",
+    "loading": "Cargando planes…",
+    "error": "No pudimos cargar los planes. Intenta de nuevo más tarde.",
+    "empty": "Aún no hay planes disponibles.",
+    "popular": "Más popular",
+    "perMonth": "/ mes",
+    "oneTimeSuffix": "pago único",
+    "downPayment": "Pago inicial: {{amount}}",
+    "save": "Ahorras {{amount}} vs. pago mensual",
+    "getStarted": "Comenzar"
+  },
+  "contact": {
+    "kicker": "Contacto",
+    "titleA": "¿Cómo conseguir nuevos clientes",
+    "titleB": "para tu negocio?",
+    "subtitle": "¡Tenemos la solución a esa y otras preguntas!",
+    "pitchTitle": "Con nosotros tendrás:",
+    "pitch1Title": "Más visibilidad",
+    "pitch1Text": "Posiciona tu marca donde tus clientes te están buscando.",
+    "pitch2Title": "Mejor posición en internet",
+    "pitch2Text": "SEO y campañas que traen tráfico calificado.",
+    "pitch3Title": "Más clientes",
+    "pitch3Text": "Un sitio web diseñado para convertir visitas en ventas.",
+    "formTitle": "Envíanos un mensaje",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "message": "Mensaje",
+    "firstNamePh": "Juan",
+    "lastNamePh": "Pérez",
+    "emailPh": "nombre@ejemplo.com",
+    "phonePh": "(xxx) xxx-xxxx",
+    "messagePh": "Cuéntanos sobre tu negocio...",
+    "errFirstName": "* El nombre es obligatorio",
+    "errLastName": "* El apellido es obligatorio",
+    "errEmail": "* Ingresa un correo válido",
+    "errPhone": "* El teléfono es obligatorio",
+    "errMessage": "* El mensaje es obligatorio",
+    "sending": "Enviando…",
+    "submit": "Enviar mensaje",
+    "success": "¡Gracias! Te contactaremos pronto."
+  },
+  "errors": {
+    "generic": "Algo salió mal. Intenta de nuevo más tarde.",
+    "dismiss": "Cerrar"
+  },
+  "seo": {
+    "home": {
+      "title": "IWS+ | Empieza a conseguir clientes para tu negocio",
+      "description": "Ayudamos a los negocios a crecer en línea con desarrollo web a la medida, SEO y soluciones de marketing digital."
+    },
+    "services": {
+      "title": "IWS+ | Servicios",
+      "description": "Desarrollo web, diseño web, SEO, marketing digital y más. Soluciones a la medida para hacer crecer tu negocio en línea."
+    },
+    "pricing": {
+      "title": "IWS+ | Precios",
+      "description": "Planes flexibles mensuales y de pago único para desarrollo web, marketing y diseño. Encuentra el plan ideal para tu negocio."
+    },
+    "contact": {
+      "title": "IWS+ | Contacto",
+      "description": "¿Listo para conseguir más clientes? Contacta a IWS+ y déjanos ayudar a tu negocio a crecer en línea."
+    }
+  }
+}
