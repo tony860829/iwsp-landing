@@ -1,7 +1,11 @@
-.header {
+:host {
   position: sticky;
   top: 0;
   z-index: 100;
+  display: block;
+}
+
+.header {
   background: var(--color-navy);
   color: var(--color-white);
 }
