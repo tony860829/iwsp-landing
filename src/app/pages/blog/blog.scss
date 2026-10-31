@@ -1,0 +1,136 @@
+.blog-hero {
+  padding-block: 72px 56px;
+  text-align: center;
+
+  .section-kicker {
+    justify-content: center;
+  }
+}
+
+.state {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding-block: 48px;
+}
+
+.state--error {
+  color: #e0342b;
+}
+
+.blog__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+.blog__card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-pop);
+  }
+}
+
+.blog__card-media {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%;
+  overflow: hidden;
+  flex: 0 0 auto;
+  background: var(--color-navy);
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .blog__card-placeholder {
+    top: 24px;
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+.blog__card-body {
+  padding: 22px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  h2 {
+    font-size: 1.15rem;
+    line-height: 1.35;
+
+    a {
+      color: var(--color-navy);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--color-orange);
+      }
+    }
+  }
+
+  p {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+}
+
+.blog__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  time {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+  }
+}
+
+.blog__badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-orange);
+  background: rgba(255, 92, 26, 0.12);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.blog__more {
+  margin-top: auto;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-orange);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 560px) {
+  .blog__grid {
+    grid-template-columns: 1fr;
+  }
+}

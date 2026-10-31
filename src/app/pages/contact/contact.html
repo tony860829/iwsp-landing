@@ -62,9 +62,10 @@
         <div class="field">
           <label for="phone">{{ 'contact.phone' | transloco }}</label>
           <input id="phone" type="tel" formControlName="phone" [placeholder]="'contact.phonePh' | transloco"
+            maxlength="14" autocomplete="tel-national" inputmode="numeric"
             [class.field__input--error]="fieldInvalid('phone')" />
           @if (fieldInvalid('phone')) {
-            <small class="field__error">{{ 'contact.errPhone' | transloco }}</small>
+            <small class="field__error">{{ (phoneEmpty() ? 'contact.errPhone' : 'contact.errPhoneFormat') | transloco }}</small>
           }
         </div>
       </div>

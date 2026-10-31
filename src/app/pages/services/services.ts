@@ -1,4 +1,4 @@
-import { Component, OnInit, computed, inject, signal } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -17,20 +17,9 @@ import { Seo } from '../../core/services/seo';
 export class Services implements OnInit {
   private readonly api = inject(ServicesApi);
 
-  private readonly rawServices = signal<IService[]>([]);
+  protected readonly services = signal<IService[]>([]);
   protected readonly loading = signal(true);
   protected readonly error = signal(false);
-
-  /** Unique services: the API may return duplicates with the same name. */
-  protected readonly services = computed(() => {
-    const seen = new Set<string>();
-    return this.rawServices().filter((s) => {
-      const key = (s.name ?? '').trim().toLowerCase();
-      if (!key || seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    });
-  });
 
   constructor() {
     const seo = inject(Seo);
@@ -44,9 +33,9 @@ export class Services implements OnInit {
   }
 
   ngOnInit(): void {
-    this.api.getServices().subscribe({
+    this.api.getUniqueServices().subscribe({
       next: (list) => {
-        this.rawServices.set(list);
+        this.services.set(list);
         this.loading.set(false);
       },
       error: () => {

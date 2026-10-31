@@ -8,7 +8,9 @@
       <p class="hero__subtitle">{{ 'home.hero.subtitle' | transloco }}</p>
       <div class="hero__actions">
         <a routerLink="/contact" class="btn btn--primary">{{ 'home.hero.startNow' | transloco }}</a>
-        <a routerLink="/services" class="btn btn--outline">{{ 'home.hero.watchVideo' | transloco }}</a>
+        <button type="button" class="btn btn--outline" (click)="openVideo()">
+          {{ 'home.hero.watchVideo' | transloco }}
+        </button>
       </div>
     </div>
 
@@ -16,4 +18,21 @@
       <img class="hero__image" src="images/hero.webp" [alt]="'home.hero.imageAlt' | transloco" />
     </div>
   </div>
+
+  @if (videoOpen()) {
+    <div class="hero__video-overlay" (click)="closeVideo()">
+      <div class="hero__video-modal" (click)="$event.stopPropagation()" role="dialog" aria-modal="true"
+        [attr.aria-label]="'home.hero.videoTitle' | transloco">
+        <button type="button" class="hero__video-close" (click)="closeVideo()"
+          [attr.aria-label]="'home.hero.closeVideo' | transloco">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+        <iframe class="hero__video-frame" [src]="videoEmbed" [title]="'home.hero.videoTitle' | transloco"
+          allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  }
 </section>

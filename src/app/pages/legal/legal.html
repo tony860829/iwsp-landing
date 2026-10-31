@@ -1,0 +1,17 @@
+<section class="legal__hero section--dark">
+  <div class="container">
+    <h1 class="section-title">{{ titleKey | transloco }}</h1>
+    <p class="legal__updated">{{ updatedKey | transloco }}</p>
+  </div>
+</section>
+
+<section class="section section--light">
+  <div class="container legal__content">
+    @for (section of sections; track section.title) {
+      <article class="legal__section">
+        <h2>{{ section.title | transloco }}</h2>
+        <p>{{ section.text | transloco }}</p>
+      </article>
+    }
+  </div>
+</section>

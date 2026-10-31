@@ -1,0 +1,97 @@
+<section class="post-hero section--dark">
+  <div class="container">
+    <a class="post__back" routerLink="/blog">← {{ 'blog.back' | transloco }}</a>
+    @if (post(); as p) {
+      <div class="post__meta">
+        <time>{{ formatDate(p.createdDate) }}</time>
+      </div>
+      <h1 class="section-title">{{ p.title }}</h1>
+    }
+  </div>
+</section>
+
+<section class="section section--light">
+  <div class="container">
+    @if (loading()) {
+      <div class="state">{{ 'blog.loading' | transloco }}</div>
+    } @else if (error() || !post()) {
+      <div class="state state--error">{{ 'blog.postNotFound' | transloco }}</div>
+    } @else if (post(); as p) {
+      <article class="post__article">
+        @if (imageSrc(p.picture); as src) {
+          <img class="post__image" [src]="src" [alt]="p.title ?? ''" />
+        }
+        <div class="post__content" [innerHTML]="p.content"></div>
+      </article>
+
+      <section class="post__comments">
+        <h2>{{ 'blog.commentsTitle' | transloco }}</h2>
+
+        @if (loadingComments()) {
+          <div class="state">{{ 'blog.loading' | transloco }}</div>
+        } @else if (comments().length === 0) {
+          <p class="post__no-comments">{{ 'blog.noComments' | transloco }}</p>
+        } @else {
+          <ul class="post__comment-list">
+            @for (comment of comments(); track comment.id) {
+              <li class="post__comment">
+                <div class="post__comment-head">
+                  <strong>{{ commentName(comment) }}</strong>
+                  <time>{{ formatDate(comment.createdDate) }}</time>
+                </div>
+                <p>{{ comment.content }}</p>
+              </li>
+            }
+          </ul>
+        }
+
+        <form class="post__form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+          <h3>{{ 'blog.commentFormTitle' | transloco }}</h3>
+
+          <div class="post__row">
+            <div class="field">
+              <label for="c-firstName">{{ 'blog.firstName' | transloco }}</label>
+              <input id="c-firstName" type="text" formControlName="firstName" [placeholder]="'blog.firstNamePh' | transloco"
+                [class.field__input--error]="fieldInvalid('firstName')" />
+              @if (fieldInvalid('firstName')) {
+                <small class="field__error">{{ 'blog.errFirstName' | transloco }}</small>
+              }
+            </div>
+
+            <div class="field">
+              <label for="c-lastName">{{ 'blog.lastName' | transloco }}</label>
+              <input id="c-lastName" type="text" formControlName="lastName" [placeholder]="'blog.lastNamePh' | transloco"
+                [class.field__input--error]="fieldInvalid('lastName')" />
+              @if (fieldInvalid('lastName')) {
+                <small class="field__error">{{ 'blog.errLastName' | transloco }}</small>
+              }
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="c-email">{{ 'blog.email' | transloco }}</label>
+            <input id="c-email" type="email" formControlName="email" [placeholder]="'blog.emailPh' | transloco"
+              [class.field__input--error]="fieldInvalid('email')" />
+            @if (fieldInvalid('email')) {
+              <small class="field__error">{{ 'blog.errEmail' | transloco }}</small>
+            }
+          </div>
+
+          <div class="field">
+            <label for="c-content">{{ 'blog.comment' | transloco }}</label>
+            <textarea id="c-content" formControlName="content" rows="4"
+              [placeholder]="'blog.commentPh' | transloco"
+              [class.field__input--error]="fieldInvalid('content')"></textarea>
+            @if (fieldInvalid('content')) {
+              <small class="field__error">{{ 'blog.errComment' | transloco }}</small>
+            }
+          </div>
+
+          <button type="submit" class="btn btn--primary post__submit" [disabled]="sending()">
+            {{ (sending() ? 'blog.sending' : 'blog.submit') | transloco }}
+          </button>
+        </form>
+      </section>
+    }
+  </div>
+</section>

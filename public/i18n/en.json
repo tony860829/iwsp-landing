@@ -3,6 +3,7 @@
     "home": "Home",
     "services": "Services",
     "pricing": "Pricing",
+    "blog": "Blog",
     "contact": "Contact",
     "cta": "Get a quote",
     "logoAria": "IWS+ Home",
@@ -13,10 +14,6 @@
   "footer": {
     "tagline": "We help people like you to obtain clients for their business through different marketing channels.",
     "servicesTitle": "Services",
-    "webDevelopment": "Web Development",
-    "webDesign": "Web Design",
-    "seo": "SEO",
-    "digitalMarketing": "Digital Marketing",
     "companyTitle": "Company",
     "legalTitle": "Legal",
     "terms": "Terms of Service",
@@ -32,6 +29,8 @@
       "subtitle": "We help people like you to obtain clients for their business through different marketing channels.",
       "startNow": "Start Now",
       "watchVideo": "Watch video",
+      "videoTitle": "IWS+ video",
+      "closeVideo": "Close video",
       "imageAlt": "IWS+ business growth dashboard"
     },
     "stats": {
@@ -56,19 +55,7 @@
     },
     "solutions": {
       "titleA": "Everything your business",
-      "titleB": "needs to grow online",
-      "webdevTitle": "Web Development",
-      "webdevText": "Develop a full web solution for your business: fast, secure and ready to scale.",
-      "webdesignTitle": "Web Design",
-      "webdesignText": "Customized designs focused on user experience and your brand identity.",
-      "seoTitle": "SEO / Search Engine",
-      "seoText": "Optimize your site to rank better in search engines and attract organic traffic.",
-      "marketingTitle": "Digital Marketing",
-      "marketingText": "Campaigns on social networks and ads to reach your ideal customers.",
-      "emailTitle": "Email Marketing",
-      "emailText": "Design and automation of email campaigns to retain your customers.",
-      "socialTitle": "Social Media Admin",
-      "socialText": "Management of your social media so you can focus on your business."
+      "titleB": "needs to grow online"
     },
     "audience": {
       "kicker": "Who we help",
@@ -165,6 +152,7 @@
     "errLastName": "* Last name is required",
     "errEmail": "* Valid email is required",
     "errPhone": "* Phone is required",
+    "errPhoneFormat": "* Enter a valid US phone number: (xxx) xxx-xxxx",
     "errMessage": "* Message is required",
     "sending": "Sending…",
     "submit": "Send message",
@@ -173,6 +161,97 @@
   "errors": {
     "generic": "Something went wrong. Please try again later.",
     "dismiss": "Dismiss"
+  },
+  "blog": {
+    "kicker": "Blog",
+    "title": "Insights & News",
+    "subtitle": "Tips, news and resources to grow your business online.",
+    "loading": "Loading posts…",
+    "error": "We couldn't load the posts. Please try again later.",
+    "empty": "No posts published yet.",
+    "readMore": "Read more",
+    "back": "Back to blog",
+    "postNotFound": "We couldn't find this post.",
+    "commentsTitle": "Comments",
+    "noComments": "No comments yet. Be the first to comment!",
+    "commentFormTitle": "Leave a comment",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "comment": "Comment",
+    "firstNamePh": "John",
+    "lastNamePh": "Snow",
+    "emailPh": "name@example.com",
+    "commentPh": "Write your comment...",
+    "errFirstName": "* First name is required",
+    "errLastName": "* Last name is required",
+    "errEmail": "* Valid email is required",
+    "errComment": "* Comment is required",
+    "sending": "Sending…",
+    "submit": "Post comment",
+    "commentSuccess": "Thanks! Your comment has been received."
+  },
+  "legal": {
+    "terms": {
+      "title": "Terms of Service",
+      "updated": "Last updated: October 2026",
+      "s1Title": "1. Acceptance of the Terms",
+      "s1Text": "These Terms of Service ('Terms') govern the use of the website iwsplus.com (the 'Site') and the services offered by IWS+ (InfoWebSolutionsPlus, 'we', 'us'). By accessing the Site, submitting our contact form or hiring any of our services, you confirm that you have read, understood and accepted these Terms. If you do not agree with them, please refrain from using the Site or contracting our services.",
+      "s2Title": "2. Our Services",
+      "s2Text": "IWS+ provides web development, web design, search engine optimization (SEO), digital marketing and related services. The scope, deliverables, timeline and price of each project or plan are those defined in the written quote or plan accepted by the client. Descriptions and prices published on the Site are for general reference only and may be updated without prior notice.",
+      "s3Title": "3. Quotes, Plans and Payments",
+      "s3Text": "All prices are quoted in US dollars (USD). Depending on the service, we may require a down payment before starting work, and recurring plans are billed monthly in advance. Payments not received on time may cause the suspension of the service until the outstanding balance is settled. Amounts already paid for work performed are non-refundable, except where the law requires otherwise.",
+      "s4Title": "4. Client Responsibilities",
+      "s4Text": "The client agrees to provide accurate and complete information, as well as the materials necessary for the project (texts, images, logos and access to third-party accounts), and to review and respond to deliverables within the agreed timeframes. Delays caused by a lack of information or approval on the client's side may extend the project timeline.",
+      "s5Title": "5. Intellectual Property",
+      "s5Text": "Once the total price of a project has been paid, the deliverables created specifically for the client become the client's property. IWS+ retains the right to display such work as part of its portfolio, unless a written agreement establishes otherwise. Tools, components and pre-existing methodologies developed by IWS+ remain its property and are licensed to the client for use within the delivered project.",
+      "s6Title": "6. Revisions and Cancellations",
+      "s6Text": "Each project includes the revision rounds established in the accepted quote; additional changes may generate additional costs. Recurring services (such as monthly plans) can be cancelled by either party with written notice, taking effect at the end of the current billing period.",
+      "s7Title": "7. No Guarantee of Results",
+      "s7Text": "While we apply professional best practices in every project, we cannot guarantee specific results such as search engine rankings, traffic volumes, conversion rates or sales figures, since these depend on factors beyond our control, including competition, market conditions and third-party algorithm changes.",
+      "s8Title": "8. Disclaimer and Limitation of Liability",
+      "s8Text": "The Site and its content are provided 'as is', without warranties of any kind. To the maximum extent permitted by law, IWS+ is not liable for indirect or consequential damages arising from the use of the Site or the services, and its total liability shall not exceed the amounts actually paid by the client to IWS+ in the twelve (12) months preceding the claim.",
+      "s9Title": "9. Changes to These Terms",
+      "s9Text": "We may update these Terms at any time. The current version is always available on this page and its revision date appears at the top. Continued use of the Site after changes are published constitutes acceptance of the updated Terms.",
+      "s10Title": "10. Governing Law and Contact",
+      "s10Text": "These Terms are governed by the laws applicable in the country of establishment of IWS+. For any questions about these Terms, contact us at contact@iwsplus.com or through our contact page."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "updated": "Last updated: October 2026",
+      "s1Title": "1. Introduction",
+      "s1Text": "IWS+ (InfoWebSolutionsPlus) operates the website iwsplus.com. This Privacy Policy explains what personal data we collect through the Site, how we use it, with whom we share it and what rights you have over it, in accordance with applicable data protection regulations.",
+      "s2Title": "2. Data We Collect",
+      "s2Text": "We collect the data you provide directly: your name, last name, email, phone number and message when you submit our contact form, and your name, email and comment when you post a comment on our blog. We also collect technical information automatically, such as browser type, device and pages visited, through server logs and, if enabled, analytics tools.",
+      "s3Title": "3. How We Use Your Data",
+      "s3Text": "We use your personal data to: (a) respond to your inquiries and prepare quotes; (b) provide and manage the services you contract; (c) improve the content and operation of the Site; and (d) send you communications that may be of interest, only with your consent. We do not use your data for automated decisions with legal effects.",
+      "s4Title": "4. Cookies and Local Storage",
+      "s4Text": "We use cookies and local storage for the technical operation of the Site, for example to remember your language preference. You can find all the details in our Cookies Policy, available at iwsplus.com/cookies.",
+      "s5Title": "5. Sharing of Information",
+      "s5Text": "We do not sell, rent or trade your personal data. We only share it with service providers that help us operate the Site and provide our services (hosting, email, analytics), bound by confidentiality obligations, and when required by law, regulation or a valid order from a competent authority.",
+      "s6Title": "6. Retention and Security",
+      "s6Text": "We keep your personal data only as long as necessary for the purposes described above or as required by law. We apply reasonable technical and organizational measures to protect it; however, no method of transmission over the Internet is completely secure.",
+      "s7Title": "7. Your Rights",
+      "s7Text": "You may request at any time access to, rectification or deletion of your personal data, as well as the withdrawal of your consent, by writing to contact@iwsplus.com. We will respond within a reasonable period and in accordance with applicable regulations.",
+      "s8Title": "8. Minors",
+      "s8Text": "The Site is not directed at children under 13 years of age, and we do not knowingly collect their personal data. If you believe a minor has provided us with data, contact us so we can delete it.",
+      "s9Title": "9. Changes and Contact",
+      "s9Text": "We may update this Privacy Policy; the revision date is shown at the top of this page. For any question about this policy or how we handle your data, contact us at contact@iwsplus.com."
+    },
+    "cookies": {
+      "title": "Cookies Policy",
+      "updated": "Last updated: October 2026",
+      "s1Title": "1. What Are Cookies?",
+      "s1Text": "Cookies are small text files that your browser stores when you visit a website, along with similar technologies such as local storage. They allow the site to function properly and to remember information about your visit, such as your preferences.",
+      "s2Title": "2. Cookies We Use",
+      "s2Text": "We use strictly necessary elements for the operation of the Site, and preference elements such as the local storage key that remembers your selected language ('iws-lang'). If we enable analytics tools in the future, they may use cookies to collect aggregate usage statistics.",
+      "s3Title": "3. Third-Party Cookies",
+      "s3Text": "Some embedded content, such as the Facebook videos included on the Site, may set cookies when you interact with it. This content is governed by the privacy and cookie policies of the corresponding provider.",
+      "s4Title": "4. Managing Your Preferences",
+      "s4Text": "You can delete or block cookies and local storage from your browser settings. Keep in mind that disabling them may affect some functionalities; for example, your language preference will not be remembered.",
+      "s5Title": "5. Changes and Contact",
+      "s5Text": "We may update this Cookies Policy; the revision date is shown at the top of this page. For any question, contact us at contact@iwsplus.com."
+    }
   },
   "seo": {
     "home": {
@@ -190,6 +269,22 @@
     "contact": {
       "title": "IWS+ | Contact",
       "description": "Ready to get more clients? Contact IWS+ and let us help your business grow online."
+    },
+    "blog": {
+      "title": "IWS+ | Blog",
+      "description": "Tips, news and resources about web development, design and digital marketing to grow your business."
+    },
+    "terms": {
+      "title": "IWS+ | Terms of Service",
+      "description": "Terms of Service governing the use of the iwsplus.com website and the web development, design and digital marketing services offered by IWS+."
+    },
+    "privacy": {
+      "title": "IWS+ | Privacy Policy",
+      "description": "Learn how IWS+ collects, uses, shares and protects your personal data, and the rights you have over it."
+    },
+    "cookies": {
+      "title": "IWS+ | Cookies Policy",
+      "description": "How IWS+ uses cookies and local storage to make iwsplus.com work properly and remember your preferences."
     }
   }
 }

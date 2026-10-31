@@ -1,0 +1,48 @@
+<section class="blog-hero section--dark">
+  <div class="container">
+    <span class="section-kicker">{{ 'blog.kicker' | transloco }}</span>
+    <h1 class="section-title">{{ 'blog.title' | transloco }}</h1>
+    <p class="section-subtitle">{{ 'blog.subtitle' | transloco }}</p>
+  </div>
+</section>
+
+<section class="section section--light">
+  <div class="container">
+    @if (loading()) {
+      <div class="state">{{ 'blog.loading' | transloco }}</div>
+    } @else if (error()) {
+      <div class="state state--error">{{ 'blog.error' | transloco }}</div>
+    } @else if (posts().length === 0) {
+      <div class="state">{{ 'blog.empty' | transloco }}</div>
+    } @else {
+      <div class="blog__grid">
+        @for (post of posts(); track post.id) {
+          <article class="blog__card">
+            <a class="blog__card-media" [routerLink]="['/blog', post.title!]">
+              @if (imageSrc(post.picture); as src) {
+                <img [src]="src" [alt]="post.title ?? ''" loading="lazy" />
+              } @else {
+                <img class="blog__card-placeholder" src="/images/logo-orange.png" alt="" loading="lazy" />
+              }
+            </a>
+            <div class="blog__card-body">
+              <div class="blog__meta">
+                @if (categoryName(post.categoryID)) {
+                  <span class="blog__badge">{{ categoryName(post.categoryID) }}</span>
+                }
+                <time>{{ formatDate(post.createdDate) }}</time>
+              </div>
+              <h2>
+                <a [routerLink]="['/blog', post.title!]">{{ post.title }}</a>
+              </h2>
+              @if (excerpt(post.content)) {
+                <p>{{ excerpt(post.content) }}</p>
+              }
+              <a class="blog__more" [routerLink]="['/blog', post.title!]">{{ 'blog.readMore' | transloco }} →</a>
+            </div>
+          </article>
+        }
+      </div>
+    }
+  </div>
+</section>

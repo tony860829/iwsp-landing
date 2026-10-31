@@ -3,6 +3,7 @@
     "home": "Inicio",
     "services": "Servicios",
     "pricing": "Precios",
+    "blog": "Blog",
     "contact": "Contacto",
     "cta": "Cotiza ahora",
     "logoAria": "IWS+ Inicio",
@@ -13,10 +14,6 @@
   "footer": {
     "tagline": "Ayudamos a personas como tú a conseguir clientes para su negocio a través de diferentes canales de marketing.",
     "servicesTitle": "Servicios",
-    "webDevelopment": "Desarrollo Web",
-    "webDesign": "Diseño Web",
-    "seo": "SEO",
-    "digitalMarketing": "Marketing Digital",
     "companyTitle": "Empresa",
     "legalTitle": "Legal",
     "terms": "Términos de Servicio",
@@ -32,6 +29,8 @@
       "subtitle": "Ayudamos a personas como tú a conseguir clientes para su negocio a través de diferentes canales de marketing.",
       "startNow": "Empieza ahora",
       "watchVideo": "Ver video",
+      "videoTitle": "Video de IWS+",
+      "closeVideo": "Cerrar video",
       "imageAlt": "Panel de crecimiento de negocio de IWS+"
     },
     "stats": {
@@ -56,19 +55,7 @@
     },
     "solutions": {
       "titleA": "Todo lo que tu negocio",
-      "titleB": "necesita para crecer en línea",
-      "webdevTitle": "Desarrollo Web",
-      "webdevText": "Desarrolla una solución web completa para tu negocio: rápida, segura y lista para escalar.",
-      "webdesignTitle": "Diseño Web",
-      "webdesignText": "Diseños personalizados enfocados en la experiencia de usuario y la identidad de tu marca.",
-      "seoTitle": "SEO / Motores de búsqueda",
-      "seoText": "Optimiza tu sitio para posicionar mejor en buscadores y atraer tráfico orgánico.",
-      "marketingTitle": "Marketing Digital",
-      "marketingText": "Campañas en redes sociales y anuncios para llegar a tus clientes ideales.",
-      "emailTitle": "Email Marketing",
-      "emailText": "Diseño y automatización de campañas de email para fidelizar a tus clientes.",
-      "socialTitle": "Gestión de Redes Sociales",
-      "socialText": "Administramos tus redes sociales para que tú te enfoques en tu negocio."
+      "titleB": "necesita para crecer en línea"
     },
     "audience": {
       "kicker": "A quién ayudamos",
@@ -165,6 +152,7 @@
     "errLastName": "* El apellido es obligatorio",
     "errEmail": "* Ingresa un correo válido",
     "errPhone": "* El teléfono es obligatorio",
+    "errPhoneFormat": "* Ingresa un teléfono válido de EEUU: (xxx) xxx-xxxx",
     "errMessage": "* El mensaje es obligatorio",
     "sending": "Enviando…",
     "submit": "Enviar mensaje",
@@ -173,6 +161,97 @@
   "errors": {
     "generic": "Algo salió mal. Intenta de nuevo más tarde.",
     "dismiss": "Cerrar"
+  },
+  "blog": {
+    "kicker": "Blog",
+    "title": "Artículos y Novedades",
+    "subtitle": "Consejos, noticias y recursos para hacer crecer tu negocio en línea.",
+    "loading": "Cargando artículos…",
+    "error": "No pudimos cargar los artículos. Intenta de nuevo más tarde.",
+    "empty": "Aún no hay artículos publicados.",
+    "readMore": "Leer más",
+    "back": "Volver al blog",
+    "postNotFound": "No pudimos encontrar este artículo.",
+    "commentsTitle": "Comentarios",
+    "noComments": "Aún no hay comentarios. ¡Sé el primero en comentar!",
+    "commentFormTitle": "Deja un comentario",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Correo electrónico",
+    "comment": "Comentario",
+    "firstNamePh": "Juan",
+    "lastNamePh": "Pérez",
+    "emailPh": "nombre@ejemplo.com",
+    "commentPh": "Escribe tu comentario...",
+    "errFirstName": "* El nombre es obligatorio",
+    "errLastName": "* El apellido es obligatorio",
+    "errEmail": "* Ingresa un correo válido",
+    "errComment": "* El comentario es obligatorio",
+    "sending": "Enviando…",
+    "submit": "Publicar comentario",
+    "commentSuccess": "¡Gracias! Tu comentario ha sido recibido."
+  },
+  "legal": {
+    "terms": {
+      "title": "Términos de Servicio",
+      "updated": "Última actualización: octubre de 2026",
+      "s1Title": "1. Aceptación de los términos",
+      "s1Text": "Estos Términos de Servicio ('Términos') rigen el uso del sitio web iwsplus.com (el 'Sitio') y los servicios ofrecidos por IWS+ (InfoWebSolutionsPlus, 'nosotros'). Al acceder al Sitio, enviar nuestro formulario de contacto o contratar cualquiera de nuestros servicios, confirmas que has leído, entendido y aceptado estos Términos. Si no estás de acuerdo con ellos, por favor abstente de usar el Sitio o de contratar nuestros servicios.",
+      "s2Title": "2. Nuestros servicios",
+      "s2Text": "IWS+ brinda servicios de desarrollo web, diseño web, posicionamiento en buscadores (SEO), marketing digital y servicios afines. El alcance, los entregables, los tiempos y el precio de cada proyecto o plan son los definidos en la cotización o el plan aceptado por escrito por el cliente. Las descripciones y precios publicados en el Sitio tienen carácter informativo y pueden actualizarse sin previo aviso.",
+      "s3Title": "3. Cotizaciones, planes y pagos",
+      "s3Text": "Todos los precios se expresan en dólares estadounidenses (USD). Según el servicio, podemos requerir un pago inicial antes de comenzar el trabajo, y los planes recurrentes se facturan mensualmente por adelantado. La falta de pago oportuno puede provocar la suspensión del servicio hasta saldar el monto pendiente. Los montos ya pagados por trabajo realizado no son reembolsables, salvo que la ley indique lo contrario.",
+      "s4Title": "4. Responsabilidades del cliente",
+      "s4Text": "El cliente se compromete a proporcionar información veraz y completa, así como los materiales necesarios para el proyecto (textos, imágenes, logotipos y accesos a cuentas de terceros), y a revisar y responder a los entregables dentro de los plazos acordados. Los retrasos causados por falta de información o aprobación del cliente pueden extender los tiempos del proyecto.",
+      "s5Title": "5. Propiedad intelectual",
+      "s5Text": "Una vez pagado el precio total de un proyecto, los entregables creados específicamente para el cliente pasan a ser propiedad del cliente. IWS+ conserva el derecho de exhibir dichos trabajos como parte de su portafolio, salvo que un acuerdo por escrito establezca lo contrario. Las herramientas, componentes y metodologías preexistentes desarrolladas por IWS+ siguen siendo de su propiedad y se licencian al cliente para su uso dentro del proyecto entregado.",
+      "s6Title": "6. Revisiones y cancelaciones",
+      "s6Text": "Cada proyecto incluye las rondas de revisión establecidas en la cotización aceptada; los cambios adicionales pueden generar costos extra. Los servicios recurrentes (como los planes mensuales) pueden cancelarse por cualquiera de las partes con aviso por escrito, surtiendo efecto al final del período de facturación en curso.",
+      "s7Title": "7. Sin garantía de resultados",
+      "s7Text": "Aunque aplicamos las mejores prácticas profesionales en cada proyecto, no podemos garantizar resultados específicos como posiciones en buscadores, volúmenes de tráfico, tasas de conversión o ventas, ya que dependen de factores fuera de nuestro control, incluidos la competencia, las condiciones del mercado y los cambios en algoritmos de terceros.",
+      "s8Title": "8. Aviso y limitación de responsabilidad",
+      "s8Text": "El Sitio y su contenido se proporcionan 'tal cual', sin garantías de ningún tipo. En la máxima medida permitida por la ley, IWS+ no es responsable por daños indirectos o consecuenciales derivados del uso del Sitio o de los servicios, y su responsabilidad total no excederá los montos efectivamente pagados por el cliente a IWS+ en los doce (12) meses previos a la reclamación.",
+      "s9Title": "9. Cambios en estos términos",
+      "s9Text": "Podemos actualizar estos Términos en cualquier momento. La versión vigente está siempre disponible en esta página y su fecha de revisión aparece al inicio. El uso continuo del Sitio después de publicar cambios constituye la aceptación de los Términos actualizados.",
+      "s10Title": "10. Legislación aplicable y contacto",
+      "s10Text": "Estos Términos se rigen por las leyes aplicables en el país de establecimiento de IWS+. Para cualquier duda sobre estos Términos, escríbenos a contact@iwsplus.com o a través de nuestra página de contacto."
+    },
+    "privacy": {
+      "title": "Política de Privacidad",
+      "updated": "Última actualización: octubre de 2026",
+      "s1Title": "1. Introducción",
+      "s1Text": "IWS+ (InfoWebSolutionsPlus) opera el sitio web iwsplus.com. Esta Política de Privacidad explica qué datos personales recopilamos a través del Sitio, cómo los usamos, con quién los compartimos y qué derechos tienes sobre ellos, de acuerdo con la normativa de protección de datos aplicable.",
+      "s2Title": "2. Datos que recopilamos",
+      "s2Text": "Recopilamos los datos que nos proporcionas directamente: tu nombre, apellido, correo electrónico, teléfono y mensaje al enviar nuestro formulario de contacto, y tu nombre, correo y comentario al publicar un comentario en nuestro blog. También recopilamos automáticamente información técnica, como el tipo de navegador, el dispositivo y las páginas visitadas, mediante registros del servidor y, si están habilitadas, herramientas de analítica.",
+      "s3Title": "3. Cómo usamos tus datos",
+      "s3Text": "Usamos tus datos personales para: (a) responder a tus consultas y preparar cotizaciones; (b) prestar y gestionar los servicios que contrates; (c) mejorar el contenido y el funcionamiento del Sitio; y (d) enviarte comunicaciones que puedan interesarte, solo con tu consentimiento. No usamos tus datos para decisiones automatizadas con efectos jurídicos.",
+      "s4Title": "4. Cookies y almacenamiento local",
+      "s4Text": "Utilizamos cookies y almacenamiento local para el funcionamiento técnico del Sitio, por ejemplo, para recordar tu preferencia de idioma. Puedes consultar todos los detalles en nuestra Política de Cookies, disponible en iwsplus.com/cookies.",
+      "s5Title": "5. Compartición de la información",
+      "s5Text": "No vendemos, alquilamos ni comercializamos tus datos personales. Solo los compartimos con proveedores de servicios que nos ayudan a operar el Sitio y prestar nuestros servicios (alojamiento, correo, analítica), obligados por deberes de confidencialidad, y cuando una ley, normativa u orden de autoridad competente lo requiera.",
+      "s6Title": "6. Retención y seguridad",
+      "s6Text": "Conservamos tus datos personales solo el tiempo necesario para los fines descritos o lo que exija la ley. Aplicamos medidas técnicas y organizativas razonables para protegerlos; sin embargo, ningún método de transmisión por Internet es completamente seguro.",
+      "s7Title": "7. Tus derechos",
+      "s7Text": "Puedes solicitar en cualquier momento el acceso, la rectificación o la eliminación de tus datos personales, así como retirar tu consentimiento, escribiendo a contact@iwsplus.com. Responderemos en un plazo razonable y conforme a la normativa aplicable.",
+      "s8Title": "8. Menores de edad",
+      "s8Text": "El Sitio no está dirigido a menores de 13 años y no recopilamos deliberadamente sus datos personales. Si crees que un menor nos ha proporcionado datos, contáctanos para que podamos eliminarlos.",
+      "s9Title": "9. Cambios y contacto",
+      "s9Text": "Podemos actualizar esta Política de Privacidad; la fecha de revisión se muestra al inicio de esta página. Para cualquier duda sobre esta política o sobre cómo tratamos tus datos, escríbenos a contact@iwsplus.com."
+    },
+    "cookies": {
+      "title": "Política de Cookies",
+      "updated": "Última actualización: octubre de 2026",
+      "s1Title": "1. ¿Qué son las cookies?",
+      "s1Text": "Las cookies son pequeños archivos de texto que tu navegador almacena al visitar un sitio web, junto con tecnologías similares como el almacenamiento local. Permiten que el sitio funcione correctamente y que se recuerde información sobre tu visita, como tus preferencias.",
+      "s2Title": "2. Cookies que utilizamos",
+      "s2Text": "Utilizamos elementos estrictamente necesarios para el funcionamiento del Sitio, y elementos de preferencias como la clave de almacenamiento local que recuerda el idioma seleccionado ('iws-lang'). Si en el futuro habilitamos herramientas de analítica, estas pueden usar cookies para recopilar estadísticas de uso agregadas.",
+      "s3Title": "3. Cookies de terceros",
+      "s3Text": "Algunos contenidos incrustados, como los videos de Facebook incluidos en el Sitio, pueden establecer cookies al interactuar con ellos. Estos contenidos se rigen por las políticas de privacidad y cookies del proveedor correspondiente.",
+      "s4Title": "4. Gestión de tus preferencias",
+      "s4Text": "Puedes eliminar o bloquear las cookies y el almacenamiento local desde la configuración de tu navegador. Ten en cuenta que deshabilitarlos puede afectar algunas funcionalidades; por ejemplo, tu preferencia de idioma no se recordará.",
+      "s5Title": "5. Cambios y contacto",
+      "s5Text": "Podemos actualizar esta Política de Cookies; la fecha de revisión se muestra al inicio de esta página. Para cualquier duda, escríbenos a contact@iwsplus.com."
+    }
   },
   "seo": {
     "home": {
@@ -190,6 +269,22 @@
     "contact": {
       "title": "IWS+ | Contacto",
       "description": "¿Listo para conseguir más clientes? Contacta a IWS+ y déjanos ayudar a tu negocio a crecer en línea."
+    },
+    "blog": {
+      "title": "IWS+ | Blog",
+      "description": "Consejos, noticias y recursos sobre desarrollo web, diseño y marketing digital para hacer crecer tu negocio."
+    },
+    "terms": {
+      "title": "IWS+ | Términos de Servicio",
+      "description": "Términos de Servicio que rigen el uso del sitio web iwsplus.com y los servicios de desarrollo web, diseño y marketing digital que ofrece IWS+."
+    },
+    "privacy": {
+      "title": "IWS+ | Política de Privacidad",
+      "description": "Conoce cómo IWS+ recopila, usa, comparte y protege tus datos personales, y los derechos que tienes sobre ellos."
+    },
+    "cookies": {
+      "title": "IWS+ | Política de Cookies",
+      "description": "Cómo utiliza IWS+ las cookies y el almacenamiento local para que iwsplus.com funcione correctamente y recuerde tus preferencias."
     }
   }
 }

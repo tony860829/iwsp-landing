@@ -4,11 +4,21 @@ Landing page pública de IWS+ (InfoWebSolutionsPlus) en **Angular 20** (standalo
 
 ## Dominio y despliegue
 - Landing: `https://iwsplus.com/` (dominio raíz)
-- App de gestión existente: `admin.iwsp.com` (proyecto hermano `../iwspApp`)
-- Backend API (compartido con la app de gestión): configurado en `src/environments/environment.ts` (`apiUrl: https://serveriwsp.online/api/` + `apiKey`)
+- App de gestión existente: `admin.iwsp.com` → proyecto hermano **`../iwspApp2`** (Angular 19, tiene su propio `AGENTS.md`). `../iwspApp` es la app vieja Angular 15, LEGACY, NO tocar.
+- Backend API (compartido con la app de gestión): configurado en `src/environments/environment.ts` (`apiUrl: https://serveriwsp.online/api/` + `apiKey`). Proyecto hermano **`../iwspApi`** (.NET 6, tiene su propio `AGENTS.md`). Ojo: el `apiKey` es en realidad el `Company.Token` de la DB, no un apiKey global.
+
+## Ecosistema
+- `iwspApi` (backend, .NET 6) ⟵ consumido por esta landing y por `iwspApp2`.
+- `iwspApp2` (admin, Angular 19) ⟵ donde llegan los leads que envía esta landing vía `POST Check`.
 
 ## Decisiones tomadas
-- Solo 4 páginas: Home (`/`), Services (`/services`), Pricing (`/pricing`), Contact (`/contact`). **Sin blog** (eliminado del viejo menú).
+- **5 páginas**: Home (`/`), Services (`/services`), Pricing (`/pricing`), Contact (`/contact`) y **Blog** (`/blog` + `/blog/:title`) — el blog se agregó de vuelta (la decisión inicial de "sin blog" se revirtió): lista los posts de la empresa IWS+ (vía `apiKey` de environment = su `Company.Token`) y el detalle muestra el post, sus comentarios y el formulario para comentar.
+- Blog: `/blog` es **prerendered** (catch-all) pero `/blog/:title` es **`RenderMode.Server`** (declarado en `app.routes.server.ts` ANTES del catch-all — una ruta parametrizada no puede prerender sin `getPrerenderParams`, que congelaría los títulos en el build). El detalle matchea `Check/blog/{title}` con el título **exacto** (case-sensitive, `encodeURIComponent`; el back devuelve BadRequest `{message, type:2}` si no existe — la página lo muestra como estado de error, y el interceptor global también toastea).
+- Datos del blog: `core/services/blog-api.ts` (`getPosts` → `GET Check/blog?token=`, `getPostByTitle`, `getComments` → `GET Check/comments?token=&postId=`, `sendComment` → `POST Check/blog?token=` con `{firstName, lastName, email, content, postsId}` — el back setea `createdDate` server-side y valida el post contra el token). **Imágenes de posts**: `${apiUrl}Upload/getPhoto/{picture}` (el `Uploads/` del back está fuera de wwwroot; ese endpoint es la única ruta pública). Nombres de categoría para los badges vía `GET api/Categories` (público). Models: `IPost` (con el casing real del payload: `companyID`, `categoryID`, `createdDate`, `cantView`), `IComment`, `CommentPayload`, `CheckResponse` en `api.models.ts`.
+- Formulario de comentarios: firstName, lastName, email, content (**phone fuera**, decisión; es opcional en el DTO del back). Patrón del form de Contact (`.field` duplicado en `post.scss`, no en el design system). Errores los toastea el interceptor global (no duplicar); el éxito con `Toast.success` usando el `message` del API.
+- Fechas con `Intl.DateTimeFormat` según `lang.activeLang()` (no hay DatePipe en el proyecto y `LOCALE_ID` nunca se cambia). Contenido Quill del post con `[innerHTML]` (sanitizer por defecto de Angular, mismo enfoque que la app vieja).
+- `Seo.update` ahora también actualiza el `<link rel="canonical">` de `index.html` (hacía falta para `/blog/:title`); el título del detalle es dinámico (`{post.title} | IWS+`), aplicado tras cargar el post.
+- Verificación de email de usuarios se hace en el panel (`admin.iwsp.com/verify/:token`, proyecto iwspApp2), NO aquí. Si una landing/ecommerce de un cliente pide verificación propia, se creará un componente en ese proyecto.
 - Idioma del contenido: **inglés** (mockup de diseño en inglés, paleta navy `#191A36` + naranja `#FF5C1A`, tipografía Poppins).
 - Services y Pricing consumen datos del backend en tiempo real (no contenido estático).
 - En Pricing se muestran **todos** los paquetes sin filtrar por `isActive` (la app vieja filtraba en frontend causando "Aún no hay planes").
@@ -28,22 +38,29 @@ Landing page pública de IWS+ (InfoWebSolutionsPlus) en **Angular 20** (standalo
 ```
 src/app/
   core/
-    header|footer/            # layout (navbar navy + logo, footer navy)
+    header|footer/            # layout (navbar navy + logo, footer navy; nav con Blog)
     spinner/  toast/          # componentes globales montados en app.html
     interceptors/
       loading.interceptor.ts  # envuelve requests con Loading (contador concurrente)
       error.interceptor.ts    # toast de error (mensaje API o genérico) y re-lanza
-    models/api.models.ts      # IService, IPackage, ContactPayload, ContactResponse
+    models/api.models.ts      # IService, IPackage, ContactPayload, ContactResponse,
+                              # IPost, IComment, ICategory, CommentPayload, CheckResponse
     services/
       services-api.ts         # GET {apiUrl}Services
       packages-api.ts         # GET {apiUrl}Packages
       contact-api.ts          # POST {apiUrl}Check?token=
-      seo.ts                  # meta tags por página (title, description, OG, Twitter)
+      blog-api.ts             # GET Check/blog[/{title}]?token=, GET Check/comments,
+                              # POST Check/blog (comentario), GET Categories
+      seo.ts                  # meta tags por página (title, description, OG, Twitter,
+                              # canonical) — reactivo al cambio de idioma
       loading.ts              # signal con contador de requests activas
       toast.ts                # toasts success/error con auto-dismiss 5s
   pages/
     home/                     # secciones: hero, stats, tailored, solutions, audience, process, team, cta
     services/  pricing/  contact/
+    blog/                     # blog.html/blog.ts (lista con tarjetas) y
+                              # post.html/post.ts (detalle + comentarios + form);
+                              # /blog prerendered, /blog/:title RenderMode.Server
 src/environments/             # environment.ts + environment.development.ts
 public/images/                # hero.webp, design.webp, development.webp, marketing.webp (IA), logo.png, logo-orange.png
 public/i18n/en.json, es.json # traducciones Transloco
@@ -54,8 +71,9 @@ public/sitemap.xml, public/robots.txt
 - Sistema de diseño en `src/styles.scss` (variables CSS, `.container`, `.section`, `.section--dark/--light`, botones).
 - Home completo con 8 secciones según el mockup provisto por el usuario.
 - Services/Pricing/Contact conectados al backend con estados loading/error/empty.
-- SEO completo + prerender (`app.routes.server.ts` → `RenderMode.Prerender` para `**`) + sitemap + robots.
-- Todos los textos en inglés; logo naranja real en header/footer.
+- **Blog** (`/blog` + `/blog/:title`): lista con tarjetas (imagen, badge de categoría, fecha, excerpt), detalle con contenido Quill, comentarios y formulario; i18n EN/ES (`blog.*`, `header.blog`, `seo.blog`), fechas localizadas con Intl, SEO reactivo (detalle con título dinámico) y canonical por página.
+- SEO completo + prerender (`app.routes.server.ts` → `RenderMode.Prerender` para `**`, `RenderMode.Server` para `blog/:title`) + sitemap (+`/blog`) + robots.
+- Todos los textos en inglés (el blog hereda traducciones EN/ES del resto); logo naranja real en header/footer.
 - Spinner global + toasts (éxito/error) vía interceptores registrados en `app.config.ts`.
 - i18n EN/ES completo (Transloco), selector en header, SEO reactivo al idioma, persistencia en localStorage.
 - Redes sociales reales en el footer.

@@ -6,18 +6,22 @@
       </h2>
     </header>
 
-    <div class="solutions__grid">
-      @for (item of solutions; track item.title) {
-        <article class="solutions__card">
-          <div class="solutions__icon" [class.solutions__icon--accent]="item.accent">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path [attr.d]="item.icon" />
-            </svg>
-          </div>
-          <h3>{{ item.title | transloco }}</h3>
-          <p>{{ item.text | transloco }}</p>
-        </article>
-      }
-    </div>
+    @if (services().length) {
+      <div class="solutions__grid">
+        @for (service of services(); track service.id; let i = $index) {
+          <article class="solutions__card">
+            <div class="solutions__icon" [class.solutions__icon--accent]="i % 2 === 1">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path [attr.d]="iconPath(i)" />
+              </svg>
+            </div>
+            <h3>{{ service.name }}</h3>
+            @if (service.description) {
+              <p>{{ service.description }}</p>
+            }
+          </article>
+        }
+      </div>
+    }
   </div>
 </section>

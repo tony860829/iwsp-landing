@@ -20,6 +20,7 @@
       <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="menuOpen.set(false)">{{ 'header.home' | transloco }}</a>
       <a routerLink="/services" routerLinkActive="active" (click)="menuOpen.set(false)">{{ 'header.services' | transloco }}</a>
       <a routerLink="/pricing" routerLinkActive="active" (click)="menuOpen.set(false)">{{ 'header.pricing' | transloco }}</a>
+      <a routerLink="/blog" routerLinkActive="active" (click)="menuOpen.set(false)">{{ 'header.blog' | transloco }}</a>
       <a routerLink="/contact" routerLinkActive="active" (click)="menuOpen.set(false)">{{ 'header.contact' | transloco }}</a>
 
       <div class="header__langs" role="group" [attr.aria-label]="'header.langAria' | transloco">

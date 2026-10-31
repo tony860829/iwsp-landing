@@ -18,26 +18,28 @@
       </div>
     </div>
 
-    <nav class="footer__col" [attr.aria-label]="'footer.servicesTitle' | transloco">
-      <h4>{{ 'footer.servicesTitle' | transloco }}</h4>
-      <a routerLink="/services">{{ 'footer.webDevelopment' | transloco }}</a>
-      <a routerLink="/services">{{ 'footer.webDesign' | transloco }}</a>
-      <a routerLink="/services">{{ 'footer.seo' | transloco }}</a>
-      <a routerLink="/services">{{ 'footer.digitalMarketing' | transloco }}</a>
-    </nav>
+    @if (services().length) {
+      <nav class="footer__col" [attr.aria-label]="'footer.servicesTitle' | transloco">
+        <h4>{{ 'footer.servicesTitle' | transloco }}</h4>
+        @for (service of services(); track service.id) {
+          <a routerLink="/services">{{ service.name }}</a>
+        }
+      </nav>
+    }
 
     <nav class="footer__col" [attr.aria-label]="'footer.companyTitle' | transloco">
       <h4>{{ 'footer.companyTitle' | transloco }}</h4>
       <a routerLink="/">{{ 'header.home' | transloco }}</a>
       <a routerLink="/pricing">{{ 'header.pricing' | transloco }}</a>
+      <a routerLink="/blog">{{ 'header.blog' | transloco }}</a>
       <a routerLink="/contact">{{ 'header.contact' | transloco }}</a>
     </nav>
 
     <nav class="footer__col" [attr.aria-label]="'footer.legalTitle' | transloco">
       <h4>{{ 'footer.legalTitle' | transloco }}</h4>
-      <a href="#">{{ 'footer.terms' | transloco }}</a>
-      <a href="#">{{ 'footer.privacy' | transloco }}</a>
-      <a href="#">{{ 'footer.cookies' | transloco }}</a>
+        <a routerLink="/terms">{{ 'footer.terms' | transloco }}</a>
+        <a routerLink="/privacy">{{ 'footer.privacy' | transloco }}</a>
+        <a routerLink="/cookies">{{ 'footer.cookies' | transloco }}</a>
     </nav>
   </div>
 
