@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { Component, OnInit, computed, inject, signal } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -21,6 +21,11 @@ export class Pricing implements OnInit {
   protected readonly loading = signal(true);
   protected readonly error = signal(false);
   protected readonly showMonthly = signal(true);
+  protected readonly visiblePackages = computed(() =>
+    this.showMonthly()
+      ? this.packages().filter((pack) => (pack.monthlyPrice ?? 0) > 0)
+      : this.packages(),
+  );
 
   constructor() {
     const seo = inject(Seo);

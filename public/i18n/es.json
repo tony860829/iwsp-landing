@@ -119,6 +119,7 @@
     "error": "No pudimos cargar los planes. Intenta de nuevo más tarde.",
     "empty": "Aún no hay planes disponibles.",
     "popular": "Más popular",
+    "startsAt": "Comienza en",
     "perMonth": "/ mes",
     "oneTimeSuffix": "pago único",
     "downPayment": "Pago inicial: {{amount}}",

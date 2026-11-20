@@ -119,6 +119,7 @@
     "error": "We couldn't load the plans. Please try again later.",
     "empty": "No plans available yet.",
     "popular": "Most popular",
+    "startsAt": "Starts at",
     "perMonth": "/ mo",
     "oneTimeSuffix": "one-time",
     "downPayment": "Down payment: {{amount}}",

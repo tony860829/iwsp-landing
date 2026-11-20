@@ -29,11 +29,11 @@
       <div class="state">{{ 'pricing.loading' | transloco }}</div>
     } @else if (error()) {
       <div class="state state--error">{{ 'pricing.error' | transloco }}</div>
-    } @else if (packages().length === 0) {
+    } @else if (visiblePackages().length === 0) {
       <div class="state">{{ 'pricing.empty' | transloco }}</div>
     } @else {
-      <div class="pricing__grid">
-        @for (pack of packages(); track pack.id; let middle = $odd) {
+      <div class="pricing__grid" [class.pricing__grid--two]="visiblePackages().length === 2">
+        @for (pack of visiblePackages(); track pack.id; let middle = $odd) {
           <article class="plan" [class.plan--featured]="middle">
             @if (middle) {
               <span class="plan__badge">{{ 'pricing.popular' | transloco }}</span>
@@ -46,6 +46,7 @@
                 <strong>{{ pack.monthlyPrice | currency: 'USD' : 'symbol' : '1.0-0' }}</strong>
                 <small>{{ 'pricing.perMonth' | transloco }}</small>
               } @else {
+                <small class="plan__starts-at">{{ 'pricing.startsAt' | transloco }}</small>
                 <strong>{{ pack.fullPrice | currency: 'USD' : 'symbol' : '1.0-0' }}</strong>
                 <small>{{ 'pricing.oneTimeSuffix' | transloco }}</small>
               }
